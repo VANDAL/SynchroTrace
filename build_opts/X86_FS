@@ -1,0 +1,5 @@
+TARGET_ISA = 'x86'
+CPU_MODELS = 'TimingSimpleCPU'
+FULL_SYSTEM = 1
+PROTOCOL = 'MESI_CMP_directory'
+RUBY=True
