@@ -1345,7 +1345,7 @@ void SynchroTrace::progressEvents(int procID)
             }
         } else {
             if (thisEvent->Type == TYPE_COMMUNICATION) {
-                if(checkCommDependency(topSubEvent->thisMsg, eventThreadID)) {    //check if communication dependencies have been met if yes trigger the msg if not reschedule wakeup for next cycle              
+                if(checkCommDependency(topSubEvent->thisMsg, eventThreadID) || threadMutexMap[eventThreadID] == true) {    // Check if communication dependencies have been met. If yes, trigger the msg. If not, reschedule wakeup for next cycle. If (this) consumer thread has a mutex lock, do not maintain the dependency as this could cause a deadlock. Could be user-level synchronization, and we do not want to maintain false-dependencies. 
                     triggerCommReadMsg(procID, eventThreadID, topSubEvent);
                 } else {
                     topSubEvent->triggerTime = g_eventQueue_ptr->getTime() + 1;
@@ -1517,21 +1517,13 @@ void SynchroTrace::createSubEvents(int procID, bool eventIDPassed, int eventThre
           subEvent thisSubEvent(0,0,0,false,false);
           thisEvent->subEventList->push_back(thisSubEvent);
         }
-        else if (thisEvent->Type == TYPE_COMMUNICATION) {
-
-        // Bypass creating COMM subevents if thread holds mutex. Create dummy event so COMM Event will end at the next progressEvents function call. Maintaining dependencies during critical sections can cause deadlocks.
-            if (threadMutexMap[thisEvent->ThreadID] == true) { //If thread has mutex, create dummy subevent
-                thisEvent->subEventList = new StaticDeque<subEvent>(1);
-                subEvent thisSubEvent(0,0,0,false,false);
+        else if (thisEvent->Type == TYPE_COMMUNICATION) { //For communication Events, create read-based subevents for each dependency
+            thisEvent->subEventList = new StaticDeque<subEvent>(thisEvent->comm_preRequisiteEvents.size());
+            for (unsigned long j=0; j < thisEvent->comm_preRequisiteEvents.size(); j++) {
+                subEvent thisSubEvent(0,0,0,DT_REQ_READ,false,true,thisEvent->comm_preRequisiteEvents[j]);
                 thisEvent->subEventList->push_back(thisSubEvent);
             }
-            else { // If thread does not have mutex, continue as normal with COMM subevent creation.
-                thisEvent->subEventList = new StaticDeque<subEvent>(thisEvent->comm_preRequisiteEvents.size());
-                for (unsigned long j=0; j < thisEvent->comm_preRequisiteEvents.size(); j++) {
-                    subEvent thisSubEvent(0,0,0,DT_REQ_READ,false,true,thisEvent->comm_preRequisiteEvents[j]);
-                    thisEvent->subEventList->push_back(thisSubEvent);
-                }
-            }
+            
         } else {
 	    unsigned long max_loc_reads;
 	    unsigned long max_loc_writes;
