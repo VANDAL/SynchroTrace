@@ -129,8 +129,8 @@ double Wire::calc_dynamic_energy(double len_) const
     double c_c = 2*m_couple_cap_unit_len*len_;
     double cap_wire = c_g + c_c;
 
-    int k;
-    double h;
+    int k = 0;
+    double h = 0.0;
 
     calc_opt_buffering(&k, &h, len_);
 
