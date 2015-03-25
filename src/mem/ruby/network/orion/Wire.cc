@@ -143,8 +143,8 @@ double Wire::calc_dynamic_energy(double len_) const
 
 double Wire::calc_static_power(double len_) const
 {
-    int k;
-    double h;
+    int k = 0;
+    double h = 0.0;
     calc_opt_buffering(&k, &h, len_);
 
     double BufferNMOSOffCurrent = m_tech_param_ptr->get_BufferNMOSOffCurrent();
