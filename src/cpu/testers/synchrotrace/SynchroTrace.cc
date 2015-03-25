@@ -780,10 +780,11 @@ void SynchroTrace::processCommEvent(string thisEvent, size_t hashPos)
         string thisDependencyInfo = dependencyInfo.substr(curHash_pos+2, (nextHash_Pos - 1) - (curHash_pos+2));
         curHash_pos = nextHash_Pos;
  
-        unsigned int thisProdThreadID;
-        unsigned long thisProdEventID;
-        unsigned long this_mem_start_range;
-        unsigned long this_mem_end_range;
+		  //Initialize
+        unsigned int thisProdThreadID=0;
+        unsigned long thisProdEventID=0;
+        unsigned long this_mem_start_range=0;
+        unsigned long this_mem_end_range=0;
         size_t curSpace_pos = -1;
         for (int i = 0; i < COMM_SHARED_INFO_ENTRIES; i++) {
             size_t nextSpace_pos = thisDependencyInfo.find(' ', curSpace_pos + 1);
