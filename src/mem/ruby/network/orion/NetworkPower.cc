@@ -77,7 +77,7 @@ Router_d::calculate_power()
     OrionRouter* orion_rtr_ptr;
     static double freq_Hz;
 
-    const string cfg_fn = "/home/DREXEL/ks499/gem5-stable_04192013/src/mem/ruby/network/orion/router.cfg";
+    const string cfg_fn = "src/mem/ruby/network/orion/router.cfg";
     orion_cfg_ptr = new OrionConfig(cfg_fn);
     freq_Hz = orion_cfg_ptr->get<double>("FREQUENCY");
 
@@ -234,7 +234,7 @@ NetworkLink_d::calculate_power()
     double link_length;
 
     // Initialization
-    const string cfg_fn = "/home/DREXEL/ks499/gem5-stable_04192013/src/mem/ruby/network/orion/router.cfg";
+    const string cfg_fn = "src/mem/ruby/network/orion/router.cfg";
     orion_cfg_ptr = new OrionConfig(cfg_fn);
     freq_Hz = orion_cfg_ptr->get<double>("FREQUENCY");
 
