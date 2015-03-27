@@ -1,0 +1,2052 @@
+version: 1
+creator: callgrind-3.9.0.SVN
+pid: 9700
+cmd:  /home/DREXEL/ks499/benchmarks/splash2_std_pthreadlib/codes/kernels/fft/FFT -m16 -p8 -l6 -t
+part: 1
+thread: 1
+
+
+desc: I1 cache: 32768 B, 64 B, 8-way associative
+desc: D1 cache: 32768 B, 64 B, 8-way associative
+desc: LL cache: 15728640 B, 64 B, 30-way associative
+
+desc: Timerange: Basic block 0 - 8517391
+desc: Trigger: Program termination
+
+positions: line
+events: Ir Dr Dw I1mr D1mr D1mw ILmr DLmr DLmw Bc Bcm Bi Bim flops iops
+summary: 34206635 7274547 3795623 931 62873 49603 831 167 35107 2441937 62106 153 40
+
+
+ob=(3) /home/DREXEL/sn446/profilers/valgrind_3.8/valgrind_newbranch/callgrind/callgrind-amd64-linux
+fl=(7) /home/DREXEL/sn446/profilers/valgrind_3.8/valgrind_newbranch/coregrind/m_trampoline.S
+fn=(254) vgPlain_amd64_linux_REDIR_FOR_vgettimeofday'gettimeofday'main'(below main)'0x0000000000400190
+176 1 0 0 1 0 0 1
++1 1
++1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 2
+
+ob=(1) /home/DREXEL/ks499/benchmarks/splash2_std_pthreadlib/codes/kernels/fft/FFT
+fl=(5) /home/DREXEL/sn446/profilers/valgrind_3.8/valgrind_newbranch/callgrind/wrapper.c
+fn=(800) pthread_mutex_unlock*'__deregister_frame_info_bases'__deregister_frame_info'0x00000000004001e0'0x000000000047ab30'__libc_csu_fini'exit'main'(below main)'0x0000000000400190
+105 7 0 5 0 0 0 0 0 0 0 0 0 0 0 6
++3 7 2 3 0 0 0 0 0 0 0 0 0 0 0 5
++1 14 2 8 0 0 0 0 0 0 0 0 0 0 0 12
++2 16 5 4 0 0 0 0 0 0 0 0 0 0 0 12
+cfi=(1) ???
+cfn=(802) pthread_mutex_unlock'pthread_mutex_unlock*'__deregister_frame_info_bases'__deregister_frame_info'0x00000000004001e0'0x000000000047ab30'__libc_csu_fini'exit'main'(below main)'0x0000000000400190
+calls=1 0 
+* 42 14 13 0 0 0 0 0 0 4
+
+fn=(554) pthread_mutex_unlock*'SlaveStart'main'(below main)'0x0000000000400190
+105 7 0 5 0 0 0 0 0 0 0 0 0 0 0 6
++3 7 2 3 0 0 0 0 0 0 0 0 0 0 0 5
++1 14 2 8 0 0 0 0 0 0 0 0 0 0 0 12
++2 16 5 4 0 0 0 0 0 0 0 0 0 0 0 12
+cfi=(1)
+cfn=(556) pthread_mutex_unlock'pthread_mutex_unlock*'SlaveStart'main'(below main)'0x0000000000400190
+calls=1 0 
+* 42 14 13 0 0 0 0 0 0 4 1
+
+fn=(805) pthread_mutex_unlock*'2'pthread_mutex_unlock'pthread_mutex_unlock*'__deregister_frame_info_bases'__deregister_frame_info'0x00000000004001e0'0x000000000047ab30'__libc_csu_fini'exit'main'(below main)'0x0000000000400190
+111 5 1 2 0 0 0 0 0 0 0 0 0 0 0 4
++2 14 2 8 0 0 0 0 0 0 0 0 0 0 0 12
++1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 2
++1 6 5 0 0 0 0 0 0 0 0 0 0 0 0 6
+
+fn=(559) pthread_mutex_unlock*'2'pthread_mutex_unlock'pthread_mutex_unlock*'SlaveStart'main'(below main)'0x0000000000400190
+111 5 1 2 0 0 0 0 0 0 0 0 0 0 0 4
++2 14 2 8 0 0 0 0 0 0 0 0 0 0 0 12
++1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 2
++1 6 5 0 0 0 0 0 0 0 0 0 0 0 0 6
+
+fn=(656) pthread_join*'main'(below main)'0x0000000000400190
+81 56 0 42 1 0 0 1 0 0 0 0 0 0 0 49
++3 49 14 21 0 0 1 0 0 0 0 0 0 0 0 35
++1 98 14 56 2 0 0 2 0 0 0 0 0 0 0 84
++2 133 49 35 2 0 0 2 0 0 0 0 0 0 0 105
+cfi=(1)
+cfn=(660) pthread_join'pthread_join*'main'(below main)'0x0000000000400190
+calls=7 -87 
+* 1282 316 329 16 16 3 16 0 0 169 6
+
+fn=(687) pthread_join*'2'pthread_join'pthread_join*'main'(below main)'0x0000000000400190
+87 35 7 14 0 0 0 0 0 0 0 0 0 0 0 28
++2 98 14 56 1 0 0 1 0 0 0 0 0 0 0 84
++1 7 7 0 0 0 0 0 0 0 0 0 0 0 0 14
++1 42 35 0 0 0 0 0 0 0 0 0 0 0 0 42
+
+fn=(476) pthread_create*'main'(below main)'0x0000000000400190
+69 70 0 56 1 0 0 1 0 0 0 0 0 0 0 63
++3 49 14 21 1 0 0 1 0 0 0 0 0 0 0 35
++1 105 21 56 2 2 0 2 1 0 0 0 0 0 0 84
++2 175 77 49 2 0 0 2 0 0 0 0 0 0 0 147
+cfi=(1)
+cfn=(480) pthread_create'pthread_create*'main'(below main)'0x0000000000400190
+calls=7 -75 
+* 4910 1038 1254 76 38 111 56 5 104 628 69 21 3
+
+fn=(511) pthread_create*'2'pthread_create'pthread_create*'main'(below main)'0x0000000000400190
+75 35 7 14 0 0 0 0 0 0 0 0 0 0 0 28
++2 105 21 56 2 0 0 2 0 0 0 0 0 0 0 84
++1 7 7 0 0 0 0 0 0 0 0 0 0 0 0 14
++1 42 35 0 0 0 0 0 0 0 0 0 0 0 0 42
+
+fn=(794) pthread_mutex_lock*'__deregister_frame_info_bases'__deregister_frame_info'0x00000000004001e0'0x000000000047ab30'__libc_csu_fini'exit'main'(below main)'0x0000000000400190
+93 7 0 5 0 0 0 0 0 0 0 0 0 0 0 6
++3 7 2 3 0 0 0 0 0 0 0 0 0 0 0 5
++1 14 2 8 0 0 0 0 0 0 0 0 0 0 0 12
++2 16 5 4 0 0 0 0 0 0 0 0 0 0 0 12
+cfi=(1)
+cfn=(796) pthread_mutex_lock'pthread_mutex_lock*'__deregister_frame_info_bases'__deregister_frame_info'0x00000000004001e0'0x000000000047ab30'__libc_csu_fini'exit'main'(below main)'0x0000000000400190
+calls=1 -99 
+* 47 13 13 0 2 0 0 0 0 3
+
+fn=(548) pthread_mutex_lock*'SlaveStart'main'(below main)'0x0000000000400190
+93 7 0 5 0 0 0 0 0 0 0 0 0 0 0 6
++3 7 2 3 0 0 0 0 0 0 0 0 0 0 0 5
++1 14 2 8 0 0 0 0 0 0 0 0 0 0 0 12
++2 16 5 4 0 0 0 0 0 0 0 0 0 0 0 12
+cfi=(1)
+cfn=(550) pthread_mutex_lock'pthread_mutex_lock*'SlaveStart'main'(below main)'0x0000000000400190
+calls=1 -99 
+* 47 13 13 0 0 0 0 0 0 3 1
+
+fn=(799) pthread_mutex_lock*'2'pthread_mutex_lock'pthread_mutex_lock*'__deregister_frame_info_bases'__deregister_frame_info'0x00000000004001e0'0x000000000047ab30'__libc_csu_fini'exit'main'(below main)'0x0000000000400190
+99 5 1 2 0 0 0 0 0 0 0 0 0 0 0 4
++2 14 2 8 0 0 0 0 0 0 0 0 0 0 0 12
++1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 2
++1 6 5 0 0 0 0 0 0 0 0 0 0 0 0 6
+
+fn=(553) pthread_mutex_lock*'2'pthread_mutex_lock'pthread_mutex_lock*'SlaveStart'main'(below main)'0x0000000000400190
+99 5 1 2 0 0 0 0 0 0 0 0 0 0 0 4
++2 14 2 8 0 0 0 0 0 0 0 0 0 0 0 12
++1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 2
++1 6 5 0 0 0 0 0 0 0 0 0 0 0 0 6
+
+fn=(560) pthread_barrier_wait*'SlaveStart'main'(below main)'0x0000000000400190
+119 14 0 10 0 0 0 0 0 0 0 0 0 0 0 12
++3 14 4 6 0 0 0 0 0 0 0 0 0 0 0 10
++1 28 4 16 0 0 0 0 0 0 0 0 0 0 0 24
++2 32 10 8 0 0 0 0 0 0 0 0 0 0 0 24
+cfi=(1)
+cfn=(562) pthread_barrier_wait'pthread_barrier_wait*'SlaveStart'main'(below main)'0x0000000000400190
+calls=2 0 
+* 136 43 36 1 0 0 1 0 0 14 4
+
+fn=(608) pthread_barrier_wait*'FFT1D'SlaveStart'main'(below main)'0x0000000000400190
+119 70 0 50 0 0 7 0 0 0 0 0 0 0 0 60
++3 70 20 30 0 0 9 0 0 0 0 0 0 0 0 50
++1 140 20 80 0 0 7 0 0 0 0 0 0 0 0 120
++2 160 50 40 0 0 0 0 0 0 0 0 0 0 0 120
+cfi=(1)
+cfn=(610) pthread_barrier_wait'pthread_barrier_wait*'FFT1D'SlaveStart'main'(below main)'0x0000000000400190
+calls=10 0 
+* 736 236 188 0 35 30 0 0 0 88 10
+
+fn=(579) pthread_barrier_wait*'2'pthread_barrier_wait'pthread_barrier_wait*'SlaveStart'main'(below main)'0x0000000000400190
+125 10 2 4 0 0 0 0 0 0 0 0 0 0 0 8
++2 28 4 16 0 0 0 0 0 0 0 0 0 0 0 24
++1 2 2 0 0 0 0 0 0 0 0 0 0 0 0 4
++1 12 10 0 0 0 0 0 0 0 0 0 0 0 0 12
+
+fn=(629) pthread_barrier_wait*'2'pthread_barrier_wait'pthread_barrier_wait*'FFT1D'SlaveStart'main'(below main)'0x0000000000400190
+125 50 10 20 0 0 20 0 0 0 0 0 0 0 0 40
++2 140 20 80 0 0 0 0 0 0 0 0 0 0 0 120
++1 10 10 0 0 0 0 0 0 0 0 0 0 0 0 20
++1 60 50 0 0 0 0 0 0 0 0 0 0 0 0 60
+
+fl=(1)
+fn=(744) memcpy'__printf_fp'vfprintf'printf'main'(below main)'0x0000000000400190
+0 92 12 8 3 1 0 0 0 0 28 16 0 0 0 200
+
+fn=(314) malloc_consolidate'valloc'main'(below main)'0x0000000000400190
+0 91 34 21 5 0 0 5 0 0 17 7 0 0 0 115
+
+fn=(796)
+0 21 4 3 0 2 0 0 0 0 3 0 0 0 0 46
+cfi=(5)
+cfn=(799)
+calls=1 99 
+0 26 9 10
+
+fn=(550)
+0 21 4 3 0 0 0 0 0 0 3 1 0 0 0 46
+cfi=(5)
+cfn=(553)
+calls=1 99 
+0 26 9 10
+
+fn=(408) drand48'InitX'main'(below main)'0x0000000000400190
+0 655360 0 131072 1 0 0 1 0 0 0 0 0 0 0 524288
+cfn=(412) erand48_r'drand48'InitX'main'(below main)'0x0000000000400190
+calls=131072 0 
+0 7733248 1966080 1048576 2 1 0 2 1 0 262144
+0 393216 262144 0 0 0 0 0 0 0 0 0 0 0 0 524288
+
+fn=(416) __drand48_iterate'erand48_r'drand48'InitX'main'(below main)'0x0000000000400190
+0 2621440 917504 393216 1 0 0 1 0 0 131072 0 0 0 0 4849664
+
+fn=(466) __docos'sin'InitU2'main'(below main)'0x0000000000400190
+0 149 22 11 1 0 0 1 0 0 22 9 0 0 0 244
+cfn=(470) __dubsin'__docos'sin'InitU2'main'(below main)'0x0000000000400190
+calls=2 0 
+0 1072 126 20 0 2 0 0 1 0 46 2
+0 42 8 11 1 0 0 1 0 0 0 0 0 0 0 35
+cfn=(468) __dubcos'__docos'sin'InitU2'main'(below main)'0x0000000000400190
+calls=7 0 
+0 3861 660 126 0 6 8 0 3 0 161 34
+0 61 31 14 0 0 0 0 0 0 0 0 0 0 0 49
+
+fn=(448) __docos'cos'InitU2'main'(below main)'0x0000000000400190
+0 357 42 42 4 0 0 4 0 0 42 6 0 0 0 525
+cfn=(452) __dubcos'__docos'cos'InitU2'main'(below main)'0x0000000000400190
+calls=21 0 
+0 11591 1984 378 48 32 10 48 11 0 483 47
+0 147 84 42 0 0 0 0 0 0 0 0 0 0 0 147
+
+fn=(468)
+0 3861 660 126 0 6 8 0 3 0 161 34 0 0 0 2037
+
+fn=(452)
+0 11591 1984 378 48 32 10 48 11 0 483 47 0 0 0 6111
+
+fn=(676) _pthread_cleanup_pop'pthread_join'pthread_join*'main'(below main)'0x0000000000400190
+0 42 14 7 0 0 0 0 0 0 7 0 0 0 0 70
+
+fn=(492) calloc'_dl_allocate_tls'pthread_create'pthread_create*'main'(below main)'0x0000000000400190
+0 266 42 49 4 5 2 4 0 0 49 2 0 0 0 378
+cfn=(494) _int_malloc'calloc'_dl_allocate_tls'pthread_create'pthread_create*'main'(below main)'0x0000000000400190
+calls=7 0 
+0 941 156 211 21 10 15 8 0 13 117 18
+0 238 70 14 4 0 0 4 0 0 56 4 0 0 0 343
+cfn=(496) memset'calloc'_dl_allocate_tls'pthread_create'pthread_create*'main'(below main)'0x0000000000400190
+calls=7 0 
+0 511 28 245 6 2 21 4 2 21 49 6 14 2
+0 7
+
+fn=(584) __lll_lock_wait'pthread_barrier_wait'pthread_barrier_wait*'SlaveStart'main'(below main)'0x0000000000400190
+0 17 5 3 0 0 0 0 0 0 3 0 0 0 0 31
+
+fn=(612) __lll_lock_wait'pthread_barrier_wait'pthread_barrier_wait*'FFT1D'SlaveStart'main'(below main)'0x0000000000400190
+0 102 30 18 0 12 3 0 0 0 18 0 0 0 0 186
+
+fn=(0) 0x0000000000400190
+cfn=(4) (below main)'0x0000000000400190
+calls=1 0 
+0 34206635 7274547 3795623 931 62873 49603 831 167 35107 2441937 62106 153 40
+
+fn=(580) malloc'SlaveStart'main'(below main)'0x0000000000400190
+0 25 4 5 0 0 0 0 0 0 5 0 0 0 0 41
+cfn=(582) _int_malloc'malloc'SlaveStart'main'(below main)'0x0000000000400190
+calls=1 0 
+0 126 21 21 0 0 1 0 0 1 13 5
+0 14 6 1 0 0 0 0 0 0 4 0 0 0 0 21
+
+fn=(268) index'_getopt_internal_r'getopt'main'(below main)'0x0000000000400190
+0 199 20 0 0 0 0 0 0 0 58 8 0 0 0 431
+
+fn=(286) memalign_hook_ini'valloc'main'(below main)'0x0000000000400190
+0 7 0 4 1 0 0 1 0 0 0 0 0 0 0 5
+cfn=(288) ptmalloc_init'memalign_hook_ini'valloc'main'(below main)'0x0000000000400190
+calls=1 0 
+0 16 7 5 0 0 0 0 0 0 1
+0 6 2 0 0 0 0 0 0 0 0 0 0 0 0 3
+cfn=(292) memalign'memalign_hook_ini'valloc'main'(below main)'0x0000000000400190
+calls=1 0 
+0 466 90 68 32 0 4 32 0 4 75 32
+
+fn=(322) __overflow'putchar'main'(below main)'0x0000000000400190
+0 7 3 1 1 2 0 1 2 0 1 0 1 1 0 11
+cfn=(326) _IO_file_overflow'__overflow'putchar'main'(below main)'0x0000000000400190
+calls=1 0 
+0 173 44 33 19 3 1 19 3 1 24 7 2 2
+
+fn=(334) _IO_file_doallocate'_IO_doallocbuf'_IO_file_overflow'__overflow'putchar'main'(below main)'0x0000000000400190
+0 10 3 3 2 2 0 2 2 0 1 0 1 1 0 14
+cfn=(338) _IO_file_stat'_IO_file_doallocate'_IO_doallocbuf'_IO_file_overflow'__overflow'putchar'main'(below main)'0x0000000000400190
+calls=1 0 
+0 17 2 0 3 0 0 3 0 0 2
+0 19 2 1 1 0 0 1 0 0 3 0 0 0 0 25
+cfn=(344) mmap'_IO_file_doallocate'_IO_doallocbuf'_IO_file_overflow'__overflow'putchar'main'(below main)'0x0000000000400190
+calls=1 0 
+0 6 1 0 0 0 0 0 0 0 1
+0 8 0 1 1 0 0 1 0 0 1 0 0 0 0 8
+cfn=(348) _IO_setb'_IO_file_doallocate'_IO_doallocbuf'_IO_file_overflow'__overflow'putchar'main'(below main)'0x0000000000400190
+calls=1 0 
+0 23 7 7 2 0 0 2 0 0 2 1
+0 6 3 0 0 0 0 0 0 0 0 0 0 0 0 5
+
+fn=(352) puts'main'(below main)'0x0000000000400190
+0 42 0 28 4 0 1 2 0 0 0 0 0 0 0 42
+cfn=(354) strlen'puts'main'(below main)'0x0000000000400190
+calls=7 0 
+0 450 42 0 4 10 0 0 9 0 104 20
+0 341 155 49 6 10 0 3 0 0 76 10 7 1 0 622
+cfn=(358) _IO_file_xsputn'puts'main'(below main)'0x0000000000400190
+calls=7 0 
+0 730 125 104 13 0 6 8 0 4 118 29
+0 84 21 14 2 0 0 1 0 0 14 2 0 0 0 91
+
+fn=(358)
+0 448 81 60 10 0 2 5 0 1 54 8 0 0 0 556
+cfn=(362) mempcpy'_IO_file_xsputn'puts'main'(below main)'0x0000000000400190
+calls=6 0 
+0 270 44 38 3 0 4 3 0 3 64 21
+0 12 0 6 0 0 0 0 0 0 0 0 0 0 0 6
+
+fn=(692) _IO_file_xsputn'_IO_padn'vfprintf'printf'main'(below main)'0x0000000000400190
+0 489 82 67 0 1 0 0 1 0 67 9 0 0 0 778
+
+fn=(736) _IO_file_xsputn'_IO_padn'__printf_fp'vfprintf'printf'main'(below main)'0x0000000000400190
+0 176 30 24 0 0 0 0 0 0 24 6 0 0 0 272
+
+fn=(376) _IO_file_xsputn'vfprintf'printf'main'(below main)'0x0000000000400190
+0 3981 678 543 0 0 6 0 0 5 535 63 0 0 0 6082
+cfn=(742) mempcpy'_IO_file_xsputn'vfprintf'printf'main'(below main)'0x0000000000400190
+calls=8 0 
+0 315 48 40 0 0 4 0 0 4 84 13
+0 16 0 8 0 0 0 0 0 0 0 0 0 0 0 8
+
+fn=(384) free'vfprintf'printf'main'(below main)'0x0000000000400190
+0 336 112 56 4 2 0 2 0 0 56 4 0 0 0 392
+
+fn=(412)
+0 786432 0 393216 0 0 0 0 0 0 0 0 0 0 0 655360
+cfn=(416)
+calls=131072 0 
+0 2621440 917504 393216 1 0 0 1 0 0 131072
+0 4325376 1048576 262144 1 1 0 1 1 0 131072 0 0 0 0 7208960
+
+fn=(696) __printf_fp'vfprintf'printf'main'(below main)'0x0000000000400190
+0 255 95 95 8 4 8 8 1 4 15 4 0 0 0 350
+cfn=(700) isnan'__printf_fp'vfprintf'printf'main'(below main)'0x0000000000400190
+calls=5 0 
+0 70 10 5 2 0 0 2
+0 25 5 10 2 0 0 2 0 0 5 0 0 0 0 50
+cfn=(704) isinf'__printf_fp'vfprintf'printf'main'(below main)'0x0000000000400190
+calls=5 0 
+0 85 10 5 1 0 0 1
+0 389 77 24 6 4 0 6 0 0 46 22 0 0 0 961
+cfn=(716) __mpn_mul'__printf_fp'vfprintf'printf'main'(below main)'0x0000000000400190
+calls=4 0 
+0 504 80 68 0 0 2 0 0 0 24 5
+0 173 21 10 2 0 0 2 0 0 34 8 0 0 0 261
+cfn=(708) __mpn_extract_double'__printf_fp'vfprintf'printf'main'(below main)'0x0000000000400190
+calls=5 0 
+0 125 10 25 3 0 0 3 0 0 6 5
+0 54 17 16 1 0 0 1 0 0 0 0 0 0 0 59
+cfn=(748) __mpn_cmp'__printf_fp'vfprintf'printf'main'(below main)'0x0000000000400190
+calls=6 0 
+0 72 18 0 2 0 0 2 0 0 12 4
+0 22 4 4 1 0 0 1 0 0 6 2 0 0 0 42
+cfn=(744)
+calls=2 0 
+0 46 6 4 0 0 0 0 0 0 14 8
+0 216 26 4 9 2 0 9 0 0 38 10 0 0 0 300
+cfn=(744)
+calls=2 0 
+0 46 6 4 3 1 0 0 0 0 14 8
+0 15 3 1 1 0 1 1 0 0 5 4 0 0 0 30
+cfn=(712) __mpn_lshift'__printf_fp'vfprintf'printf'main'(below main)'0x0000000000400190
+calls=1 0 
+0 25 6 5 0 0 1 0 0 0 1 1
+0 233 81 36 6 2 1 6 1 0 35 14 0 0 0 377
+cfn=(730) hack_digit.12031'__printf_fp'vfprintf'printf'main'(below main)'0x0000000000400190
+calls=3 0 
+0 452 88 59 10 0 2 10 0 1 31 12
+0 24 0 8 0 0 0 0 0 0 0 0 0 0 0 56
+cfn=(730)
+calls=8 0 
+0 1496 296 200 0 0 0 0 0 0 112 13
+0 124 29 30 3 0 0 3 0 0 22 9 0 0 0 283
+cfn=(730)
+calls=5 0 
+0 624 120 79 0 0 0 0 0 0 41 15
+0 293 99 27 10 0 0 10 0 0 88 35 0 0 0 775
+cfn=(738) strlen'__printf_fp'vfprintf'printf'main'(below main)'0x0000000000400190
+calls=5 0 
+0 75 15 0 0 2 0 0 0 0 20 4
+0 495 171 42 6 0 0 6 0 0 141 31 0 0 0 1118
+cfn=(740) mempcpy'__printf_fp'vfprintf'printf'main'(below main)'0x0000000000400190
+calls=5 0 
+0 90 10 5 0 0 0 0 0 0 30 10
+0 917 224 94 12 0 0 12 0 0 148 28 0 0 0 1440
+cfn=(734) _IO_padn'__printf_fp'vfprintf'printf'main'(below main)'0x0000000000400190
+calls=2 0 
+0 236 44 34 0 0 0 0 0 0 30 8 2
+0 119 9 14 5 0 0 5 0 0 14 4 0 0 0 176
+cfn=(724) __mpn_rshift'__printf_fp'vfprintf'printf'main'(below main)'0x0000000000400190
+calls=2 0 
+0 78 12 10 0 0 0 0 0 0 4
+0 16 6 4 0 0 0 0 0 0 0 0 0 0 0 24
+cfn=(724)
+calls=2 0 
+0 78 12 10 0 0 0 0 0 0 4 1
+0 50 10 4 2 0 0 2 0 0 0 0 0 0 0 116
+cfn=(712)
+calls=2 0 
+0 50 12 10 0 0 1 0 0 0 2
+0 68 16 16 5 0 1 5 0 1 2 0 0 0 0 102
+cfn=(712)
+calls=2 0 
+0 50 12 10 2 0 2 2 0 2 2 2
+0 30 14 14 2 0 1 2 0 1 0 0 0 0 0 34
+cfn=(716)
+calls=2 0 
+0 252 40 34 7 1 3 7 1 3 12 3
+0 534 146 28 10 7 0 10 7 0 110 26 0 0 0 1110
+cfn=(724)
+calls=2 0 
+0 78 12 10 1 0 0 1 0 0 4
+0 20 8 4 1 0 0 1 0 0 2 0 0 0 0 28
+cfn=(726) __mpn_mul_1'__printf_fp'vfprintf'printf'main'(below main)'0x0000000000400190
+calls=2 0 
+0 174 14 12 0 0 0 0 0 0 4 2
+0 142 18 8 8 0 0 8 0 0 16 4 0 0 0 164
+cfn=(724)
+calls=2 0 
+0 78 12 10 0 0 0 0 0 0 4
+0 154 3 39 4 1 0 4 1 0 29 21 0 0 0 431
+cfn=(730)
+calls=19 0 
+0 1864 378 245 5 0 0 5 0 0 129 52
+0 170 28 29 1 0 0 1 0 0 28 14 0 0 0 348
+
+fn=(708)
+0 125 10 25 3 0 0 3 0 0 6 5 0 0 0 137
+
+fn=(776) fini'0x00000000004001e0'0x000000000047ab30'__libc_csu_fini'exit'main'(below main)'0x0000000000400190
+0 6 2 0 1 1 0 1 1 0 1 1 0 0 0 7
+
+fn=(860) _Exit'exit'main'(below main)'0x0000000000400190
+0 5 0 0 1 0 0 0 0 0 0 0 0 0 0 2
+
+fn=(338)
+0 5 1 0 1 0 0 1 0 0 0 0 0 0 0 2
+cfn=(342) _fxstat'_IO_file_stat'_IO_file_doallocate'_IO_doallocbuf'_IO_file_overflow'__overflow'putchar'main'(below main)'0x0000000000400190
+calls=1 0 
+0 12 1 0 2 0 0 2 0 0 2
+
+fn=(380) _itoa_word'vfprintf'printf'main'(below main)'0x0000000000400190
+0 1430 114 101 6 2 0 3 1 0 114 28 0 0 0 1609
+
+fn=(428) cos'InitU'main'(below main)'0x0000000000400190
+0 23962 5400 2388 25 38 2 25 37 0 2061 181 0 0 0 34188
+cfn=(436) csloww1'cos'InitU'main'(below main)'0x0000000000400190
+calls=10 0 
+0 954 168 10 11 0 1 11 0 0 69 6
+0 4302 938 219 16 0 0 16 0 0 282 29 0 0 0 2910
+
+fn=(442) cos'InitU2'main'(below main)'0x0000000000400190
+0 3712013 871885 485718 5 48 0 5 20 0 250505 2188 0 0 0 6439835
+cfn=(448)
+calls=14 0 
+0 8054 1402 308 52 19 6 52 8 0 350 36
+0 550154 115828 45320 0 0 0 0 0 0 75782 3541 0 0 0 569405
+cfn=(464) csloww'cos'InitU2'main'(below main)'0x0000000000400190
+calls=86 0 
+0 5920 1032 86 8 0 0 8 0 0 344 4
+0 1817007 384633 66974 3 0 0 3 0 0 193962 12108 0 0 0 1657230
+cfn=(464)
+calls=26 0 
+0 4056 588 78 4 7 2 4 1 0 220 16
+0 2788 0 684 0 0 0 0 0 0 0 0 0 0 0 1368
+cfn=(458) csloww1'cos'InitU2'main'(below main)'0x0000000000400190
+calls=684 0 
+0 72125 12022 908 2 21 4 2 3 0 4866 293
+0 973902 222019 26679 5 0 0 5 0 0 72105 8723 0 0 0 717904
+cfn=(458)
+calls=178 0 
+0 18334 3102 220 0 6 1 0 2 0 1261 48
+0 15746 1965 235 1 0 0 1 0 0 1200 37 0 0 0 11877
+cfn=(448)
+calls=7 0 
+0 4041 708 154 0 13 4 0 3 0 175 17
+0 86007 20115 13148 4 0 0 4 0 0 154 8 0 0 0 17290
+
+fn=(660)
+0 147 21 49 3 3 1 3 0 0 14 0 0 0 0 154
+cfn=(664) _pthread_cleanup_push'pthread_join'pthread_join*'main'(below main)'0x0000000000400190
+calls=7 0 
+0 42 14 28 1 1 0 1
+0 7 0 7 0 0 0 0 0 0 0 0 0 0 0 14
+cfn=(668) __pthread_enable_asynccancel'pthread_join'pthread_join*'main'(below main)'0x0000000000400190
+calls=7 0 
+0 112 14 7 2 0 0 2 0 0 21
+0 126 14 14 1 1 0 1 0 0 28 2 0 0 0 196
+cfn=(672) __pthread_disable_asynccancel'pthread_join'pthread_join*'main'(below main)'0x0000000000400190
+calls=7 0 
+0 126 21 7 1 0 0 1 0 0 28 2
+0 21 0 7 0 0 0 0 0 0 0 0 0 0 0 14
+cfn=(676)
+calls=7 0 
+0 42 14 7 0 0 0 0 0 0 7
+0 49 0 14 0 0 0 0 0 0 14 2 0 0 0 63
+cfn=(680) __free_tcb'pthread_join'pthread_join*'main'(below main)'0x0000000000400190
+calls=7 0 
+0 357 105 119 5 11 2 5 0 0 56
+0 63 49 0 0 0 0 0 0 0 0 0 0 0 0 77
+cfi=(5)
+cfn=(687)
+calls=7 87 
+0 182 63 70 1 0 0 1
+0 8 1 0 2 0 0 2 0 0 1 0 0 0 0 7
+
+fn=(716)
+0 144 18 60 2 1 2 2 1 1 18 0 0 0 0 126
+cfn=(720) __mpn_mul_1'__mpn_mul'__printf_fp'vfprintf'printf'main'(below main)'0x0000000000400190
+calls=6 0 
+0 522 42 36 3 0 3 3 0 2 12 4
+0 90 60 6 2 0 0 2 0 0 6 4 0 0 0 90
+
+fn=(480)
+0 189 28 84 2 4 0 2 1 0 7 0 0 0 0 308
+cfn=(482) getpagesize'pthread_create'pthread_create*'main'(below main)'0x0000000000400190
+calls=7 0 
+0 35 14 0 2 1
+0 686 196 182 10 6 8 10 1 7 63 9 0 0 0 917
+cfn=(508) clone'pthread_create'pthread_create*'main'(below main)'0x0000000000400190
+calls=7 0 
+0 126 14 14 2 0 7 1 0 7 28 1
+0 119 49 7 0 0 0 0 0 0 21 1 0 0 0 175
+cfi=(5)
+cfn=(511)
+calls=7 75 
+0 189 70 70 2 0 0 2
+0 84 14 21 2 0 0 2 0 0 21 2 0 0 0 126
+cfn=(484) mmap'pthread_create'pthread_create*'main'(below main)'0x0000000000400190
+calls=7 0 
+0 42 7 0 1 0 0 0 0 0 7
+0 161 49 77 2 2 43 2 0 42 7 0 0 0 0 182
+cfn=(488) _dl_allocate_tls'pthread_create'pthread_create*'main'(below main)'0x0000000000400190
+calls=7 0 
+0 2992 548 722 46 25 52 30 3 48 418 52 21 3
+0 238 42 77 6 0 1 6 0 0 42 2 0 0 0 329
+cfn=(504) mprotect'pthread_create'pthread_create*'main'(below main)'0x0000000000400190
+calls=7 0 
+0 35 7 0 1 0 0 1 0 0 7
+0 14 0 0 0 0 0 0 0 0 7 2 0 0 0 42
+
+fn=(562)
+0 29 9 6 0 0 0 0 0 0 9 2 0 0 0 79
+cfi=(5)
+cfn=(579)
+calls=1 125 
+0 26 9 10
+0 14 5 2 1 0 0 1 0 0 2 2 0 0 0 25
+cfi=(5)
+cfn=(579)
+calls=1 125 
+0 26 9 10
+0 4 1 1 0 0 0 0 0 0 0 0 0 0 0 9
+cfn=(584)
+calls=1 0 
+0 17 5 3 0 0 0 0 0 0 3
+0 6 1 1 0 0 0 0 0 0 0 0 0 0 0 10
+cfn=(590) __lll_unlock_wake'pthread_barrier_wait'pthread_barrier_wait*'SlaveStart'main'(below main)'0x0000000000400190
+calls=1 0 
+0 12 4 3
+0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+
+fn=(610)
+0 230 80 40 0 15 7 0 0 0 70 10 0 0 0 590
+cfi=(5)
+cfn=(629)
+calls=10 125 
+0 260 90 100 0 0 20
+0 24 6 6 0 4 0 0 0 0 0 0 0 0 0 54
+cfn=(612)
+calls=6 0 
+0 102 30 18 0 12 3 0 0 0 18
+0 36 6 6 0 0 0 0 0 0 0 0 0 0 0 60
+cfn=(616) __lll_unlock_wake'pthread_barrier_wait'pthread_barrier_wait*'FFT1D'SlaveStart'main'(below main)'0x0000000000400190
+calls=6 0 
+0 72 24 18 0 4
+0 12 0 0 0 0 0 0 0 0 0 0 0 0 0 6
+
+fn=(262) _getopt_internal_r'getopt'main'(below main)'0x0000000000400190
+0 147 31 70 3 1 0 3 1 0 20 4 0 0 0 253
+cfn=(264) getenv'_getopt_internal_r'getopt'main'(below main)'0x0000000000400190
+calls=1 0 
+0 202 56 6 0 1 0 0 1 0 57 6
+0 206 78 23 6 0 0 6 0 0 52 23 0 0 0 480
+cfn=(268)
+calls=4 0 
+0 199 20 0 0 0 0 0 0 0 58 8
+0 249 98 19 9 0 0 9 0 0 50 11 0 0 0 516
+
+fn=(312) _int_free'_int_memalign'valloc'main'(below main)'0x0000000000400190
+0 528 132 81 2 0 1 2 0 1 111 14 0 0 0 791
+
+fn=(302) _int_free'_int_memalign'memalign'memalign_hook_ini'valloc'main'(below main)'0x0000000000400190
+0 185 46 27 15 0 1 15 0 1 40 11 0 0 0 277
+
+fn=(342)
+0 12 1 0 2 0 0 2 0 0 2 0 0 0 0 20
+
+fn=(700)
+0 70 10 5 2 0 0 2 0 0 0 0 0 0 0 165
+
+fn=(748)
+0 72 18 0 2 0 0 2 0 0 12 4 0 0 0 144
+
+fn=(756) exit'main'(below main)'0x0000000000400190
+0 33 8 5 3 3 0 3 1 0 8 4 1 1 0 38
+cfn=(812) _IO_cleanup'exit'main'(below main)'0x0000000000400190
+calls=1 0 
+0 432 121 89 44 11 0 39 8 0 73 34 4 4
+0 5 0 1 0 0 0 0 0 0 1 0 0 0 0 8
+cfn=(860)
+calls=1 0 
+0 8 0 0 2 0 0 1
+0 5 3 1 1 1 0 1 0 0 0 0 1 1 0 8
+cfn=(760) __libc_csu_fini'exit'main'(below main)'0x0000000000400190
+calls=1 0 
+0 262 65 80 10 8 0 8 2 0 20 3 1 1
+0 2 1 0 1 0 0 1
+
+fn=(590)
+0 12 4 3 0 0 0 0 0 0 0 0 0 0 0 17
+
+fn=(616)
+0 72 24 18 0 4 0 0 0 0 0 0 0 0 0 102
+
+fn=(278) ____strtol_l_internal'__strtol_internal'main'(below main)'0x0000000000400190
+0 352 64 27 11 5 0 11 5 0 75 13 0 0 0 634
+
+fn=(310) mmap'_int_malloc'_int_memalign'valloc'main'(below main)'0x0000000000400190
+0 18 3 0 1 0 0 1 0 0 3 0 0 0 0 15
+
+fn=(344)
+0 6 1 0 0 0 0 0 0 0 1 0 0 0 0 5
+
+fn=(484)
+0 42 7 0 1 0 0 0 0 0 7 0 0 0 0 35
+
+fn=(366) printf'main'(below main)'0x0000000000400190
+0 194 1 78 4 0 2 2 0 0 0 0 14 5 0 170
+cfn=(370) vfprintf'printf'main'(below main)'0x0000000000400190
+calls=1 0 
+0 8756 1868 1181 41 18 24 38 0 1 1014 238 10 1
+0 20 2 12 0 0 0 0 0 0 0 0 0 0 0 20
+cfn=(370)
+calls=2 0 
+0 6788 1527 933 166 26 21 121 17 14 982 231 24 6
+0 99 11 55 0 0 0 0 0 0 0 0 0 0 0 77
+cfn=(370)
+calls=11 0 
+0 12215 2792 1829 53 12 14 53 12 14 2197 189 62 9
+0 28 14 0 0 0 0 0 0 0 0 0 0 0 0 42
+
+fn=(392) pthread_mutex_init'main'(below main)'0x0000000000400190
+0 36 8 9 4 0 0 4 0 0 5 3 0 0 0 63
+
+fn=(460) __dubsin'csloww1'cos'InitU2'main'(below main)'0x0000000000400190
+0 10140 1175 190 0 27 5 0 5 0 437 41 0 0 0 4997
+
+fn=(472) __dubsin'csloww'cos'InitU2'main'(below main)'0x0000000000400190
+0 2128 244 40 0 7 2 0 1 0 92 6 0 0 0 1052
+
+fn=(456) __dubsin'sin'InitU2'main'(below main)'0x0000000000400190
+0 10704 1252 200 45 28 0 45 10 0 460 57 0 0 0 5260
+
+fn=(470)
+0 1072 126 20 0 2 0 0 1 0 46 2 0 0 0 526
+
+fn=(690) _IO_padn'vfprintf'printf'main'(below main)'0x0000000000400190
+0 140 35 25 3 0 1 3 0 1 15 2 5 1 0 200
+cfn=(692)
+calls=5 0 
+0 489 82 67 0 1 0 0 1 0 67 9
+0 10 0 0 0 0 0 0 0 0 0 0 0 0 0 5
+
+fn=(734)
+0 56 14 10 0 0 0 0 0 0 6 2 2 0 0 80
+cfn=(736)
+calls=2 0 
+0 176 30 24 0 0 0 0 0 0 24 6
+0 4 0 0 0 0 0 0 0 0 0 0 0 0 0 2
+
+fn=(712)
+0 125 30 25 2 0 4 2 0 2 5 3 0 0 0 195
+
+fn=(768) 0x00000000004001e0'0x000000000047ab30'__libc_csu_fini'exit'main'(below main)'0x0000000000400190
+0 17 3 4 2 2 0 1 1 0 2 0 1 1 0 17
+cfn=(776)
+calls=1 0 
+0 6 2 0 1 1 0 1 1 0 1 1
+0 8 1 1 1 0 0 0 0 0 2 0 0 0 0 8
+cfi=(3) /home/DREXEL/sjb328/Downloads/gcc-4.4.7_objdir/x86_64-unknown-linux-gnu/libgcc/../../../gcc-4.4.7/libgcc/../gcc/unwind-dw2-fde.c
+cfn=(786) __deregister_frame_info'0x00000000004001e0'0x000000000047ab30'__libc_csu_fini'exit'main'(below main)'0x0000000000400190
+calls=1 219 
+0 213 54 72 5 5 0 5 0 0 14 1
+0 5 3 1 0 0 0 0 0 0 0 0 0 0 0 4
+
+fn=(826) write'_IO_file_write'_IO_file_overflow'_IO_flush_all_lockp'_IO_cleanup'exit'main'(below main)'0x0000000000400190
+0 7 1 4 2 0 0 2 0 0 1 1 0 0 0 12
+cfn=(832) __libc_enable_asynccancel'write'_IO_file_write'_IO_file_overflow'_IO_flush_all_lockp'_IO_cleanup'exit'main'(below main)'0x0000000000400190
+calls=1 0 
+0 14 2 1 1 1 0 1 0 0 2
+0 9 4 3 0 0 0 0 0 0 0 0 0 0 0 6
+cfn=(840) __libc_disable_asynccancel'write'_IO_file_write'_IO_file_overflow'_IO_flush_all_lockp'_IO_cleanup'exit'main'(below main)'0x0000000000400190
+calls=1 0 
+0 18 3 1 2 0 0 2 0 0 4
+0 5 2 0 1 0 0 1 0 0 1 0 0 0 0 7
+
+fn=(840)
+0 18 3 1 2 0 0 2 0 0 4 0 0 0 0 63
+
+fn=(4)
+cfi=(6) /home/DREXEL/ks499/benchmarks/splash2_std_pthreadlib/codes/kernels/fft/fft.C
+cfn=(246) main'(below main)'0x0000000000400190
+calls=1 125 
+0 34206635 7274547 3795623 931 62873 49603 831 167 35107 2441937 62106 153 40
+
+fn=(250) gettimeofday'main'(below main)'0x0000000000400190
+0 3 0 1 1 0 0 1 0 0 0 0 0 0 0 3
+cob=(3)
+cfi=(7)
+cfn=(254)
+calls=1 176 
+0 3 1 0 1 0 0 1
+0 4 1 0 0 0 0 0 0 0 1 0 0 0 0 10
+
+fn=(258) getopt'main'(below main)'0x0000000000400190
+0 50 10 20 2 0 1 2 0 1 0 0 0 0 0 35
+cfn=(262)
+calls=5 0 
+0 1003 283 118 18 2 0 18 2 0 237 52
+0 40 20 15 0 0 0 0 0 0 0 0 0 0 0 35
+
+fn=(274) __strtol_internal'main'(below main)'0x0000000000400190
+0 9 3 0 1 0 0 1 0 0 0 0 0 0 0 3
+cfn=(278)
+calls=3 0 
+0 352 64 27 11 5 0 11 5 0 75 13
+
+fn=(282) valloc'main'(below main)'0x0000000000400190
+0 240 57 40 3 0 0 3 0 0 51 4 0 0 0 392
+cfn=(304) _int_memalign'valloc'main'(below main)'0x0000000000400190
+calls=6 0 
+0 2138 372 311 15 0 16 15 0 16 315 85
+0 86 42 7 2 0 0 2 0 0 18 5 0 0 0 134
+cfn=(314)
+calls=1 0 
+0 91 34 21 5 0 0 5 0 0 17 7
+0 11 5 0 1 0 0 1 0 0 0 0 1 1 0 6
+cfn=(286)
+calls=1 0 
+0 495 99 77 33 0 4 33 0 4 76 32
+
+fn=(404) srand48_r'srand48'InitX'main'(below main)'0x0000000000400190
+0 12 1 6 2 0 0 2 0 0 0 0 0 0 0 10
+
+fn=(436)
+0 954 168 10 11 0 1 11 0 0 69 6 0 0 0 751
+
+fn=(458)
+0 69880 11624 496 0 0 0 0 0 0 4740 286 0 0 0 52835
+cfn=(460)
+calls=19 0 
+0 10140 1175 190 0 27 5 0 5 0 437 41
+0 10439 2325 442 2 0 0 2 0 0 950 14 0 0 0 9828
+
+fn=(730)
+0 488 96 88 1 0 0 1 0 0 96 56 0 0 0 665
+cfn=(732) __mpn_mul_1'hack_digit.12031'__printf_fp'vfprintf'printf'main'(below main)'0x0000000000400190
+calls=18 0 
+0 972 108 90 0 0 0 0 0 0 18
+0 350 140 50 2 0 0 2 0 0 18 2 0 0 0 366
+cfn=(752) __mpn_divrem'hack_digit.12031'__printf_fp'vfprintf'printf'main'(below main)'0x0000000000400190
+calls=18 0 
+0 1420 250 216 9 0 1 9 0 1 120 22
+0 338 147 49 1 0 1 1 0 0 36 2 0 0 0 410
+cfn=(732)
+calls=13 0 
+0 702 78 65 0 0 0 0 0 0 13
+0 166 63 25 2 0 0 2 0 0 12 10 0 0 0 280
+
+fn=(752)
+0 1420 250 216 9 0 1 9 0 1 120 22 0 0 0 1364
+
+fn=(812)
+0 9 0 7 1 0 0 1 0 0 0 0 0 0 0 9
+cfn=(816) _IO_flush_all_lockp'_IO_cleanup'exit'main'(below main)'0x0000000000400190
+calls=1 0 
+0 249 67 40 28 11 0 23 8 0 46 25 2 2
+0 48 15 2 3 0 0 3 0 0 12 4 1 1 0 109
+cfn=(848) _IO_file_setbuf'_IO_cleanup'exit'main'(below main)'0x0000000000400190
+calls=1 0 
+0 75 21 27 8 0 0 8 0 0 7 2 1 1
+0 51 18 13 4 0 0 4 0 0 8 3 0 0 0 76
+
+fn=(816)
+0 42 8 11 5 4 0 5 4 0 8 7 1 1 0 67
+cfn=(818) _IO_file_overflow'_IO_flush_all_lockp'_IO_cleanup'exit'main'(below main)'0x0000000000400190
+calls=1 0 
+0 153 39 26 20 3 0 15 0 0 24 10 1 1
+0 54 20 3 3 4 0 3 4 0 14 8 0 0 0 110
+
+fn=(822) _IO_file_write'_IO_file_overflow'_IO_flush_all_lockp'_IO_cleanup'exit'main'(below main)'0x0000000000400190
+0 22 2 5 2 1 0 2 0 0 3 1 0 0 0 19
+cfn=(826)
+calls=1 0 
+0 53 12 9 6 1 0 6 0 0 8 1
+0 15 6 0 1 0 0 1 0 0 2 2 0 0 0 11
+
+fn=(482)
+0 35 14 0 2 1 0 0 0 0 0 0 0 0 0 49
+
+fn=(318) putchar'main'(below main)'0x0000000000400190
+0 219 92 44 8 8 1 4 4 0 48 5 0 0 0 398
+cfn=(322)
+calls=1 0 
+0 180 47 34 20 5 1 20 5 1 25 7 3 3
+0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 2
+
+fn=(326)
+0 59 16 14 6 0 1 6 0 1 11 3 0 0 0 100
+cfn=(330) _IO_doallocbuf'_IO_file_overflow'__overflow'putchar'main'(below main)'0x0000000000400190
+calls=1 0 
+0 108 26 16 12 3 0 12 3 0 13 4 2 2
+0 6 2 3 1 0 0 1 0 0 0 0 0 0 0 5
+
+fn=(818)
+0 38 13 6 6 1 0 1 0 0 6 3 1 1 0 56
+cfn=(822)
+calls=1 0 
+0 90 20 14 9 2 0 9 0 0 13 4
+0 25 6 6 5 0 0 5 0 0 5 3 0 0 0 37
+
+fn=(348)
+0 23 7 7 2 0 0 2 0 0 2 1 0 0 0 27
+
+fn=(498) mempcpy'_dl_allocate_tls'pthread_create'pthread_create*'main'(below main)'0x0000000000400190
+0 287 42 35 4 2 14 3 0 14 77 16 0 0 0 595
+
+fn=(742)
+0 315 48 40 0 0 4 0 0 4 84 13 0 0 0 671
+
+fn=(362)
+0 270 44 38 3 0 4 3 0 3 64 21 0 0 0 537
+
+fn=(740)
+0 90 10 5 0 0 0 0 0 0 30 10 0 0 0 205
+
+fn=(370)
+0 504 140 210 8 2 11 4 0 3 56 14 0 0 0 714
+cfn=(374) __find_specmb'vfprintf'printf'main'(below main)'0x0000000000400190
+calls=14 0 
+0 2979 676 345 5 5 0 3 5 0 937 24
+0 597 257 126 6 0 5 3 0 2 84 5 14 1 0 952
+cfn=(376)
+calls=14 0 
+0 1269 216 174 0 0 5 0 0 4 202 30
+0 70 14 28 2 0 0 1 0 0 14 6 0 0 0 98
+cfn=(384)
+calls=14 0 
+0 168 56 28 4 2 0 2 0 0 28 2
+0 28 14 14 2 0 0 1 0 0 0 0 0 0 0 42
+cfn=(384)
+calls=14 0 
+0 168 56 28 0 0 0 0 0 0 28 2
+0 1313 356 464 16 8 6 8 5 2 143 11 18 4 0 1871
+cfn=(374)
+calls=18 0 
+0 1187 288 153 0 3 0 0 2 0 319 18
+0 162 72 18 2 0 0 1 0 0 0 0 18 1 0 126
+cfn=(376)
+calls=18 0 
+0 1647 279 225 0 0 3 0 0 3 225 27
+0 1188 380 82 23 4 0 12 2 0 210 32 24 4 0 2736
+cfn=(376)
+calls=13 0 
+0 1396 231 192 0 0 2 0 0 2 192 19
+0 946 321 146 16 3 3 16 1 0 112 16 5 1 0 2277
+cfn=(696)
+calls=5 0 
+0 11186 2333 1405 141 24 23 138 11 12 1284 389 2
+0 162 39 27 4 0 0 2 0 0 19 2 0 0 0 288
+cfn=(380)
+calls=13 0 
+0 1430 114 101 6 2 0 3 1 0 114 28
+0 527 166 68 14 2 0 8 1 0 118 18 10 4 0 998
+cfn=(690)
+calls=5 0 
+0 639 117 92 3 1 1 3 1 1 82 11 5 1
+0 193 62 17 8 0 0 7 0 0 26 4 0 0 0 385
+
+fn=(388) pthread_barrier_init'main'(below main)'0x0000000000400190
+0 17 3 5 2 1 1 2 1 1 2 1 0 0 0 27
+
+fn=(400) srand48'InitX'main'(below main)'0x0000000000400190
+0 2 0 0 1 0 0 1
+cfn=(404)
+calls=1 0 
+0 12 1 6 2 0 0 2
+
+fn=(464)
+0 7836 1368 124 11 0 0 11 0 0 472 14 0 0 0 4144
+cfn=(472)
+calls=4 0 
+0 2128 244 40 0 7 2 0 1 0 92 6
+0 12 8 0 1 0 0 1 0 0 0 0 0 0 0 8
+
+fn=(680)
+0 84 21 14 1 4 0 1 0 0 21 0 0 0 0 175
+cfn=(684) __deallocate_stack'__free_tcb'pthread_join'pthread_join*'main'(below main)'0x0000000000400190
+calls=7 0 
+0 273 84 105 4 7 2 4 0 0 35
+
+fn=(684)
+0 273 84 105 4 7 2 4 0 0 35 0 0 0 0 336
+
+fn=(726)
+0 174 14 12 0 0 0 0 0 0 4 2 0 0 0 158
+
+fn=(720)
+0 522 42 36 3 0 3 3 0 2 12 4 0 0 0 474
+
+fn=(732)
+0 1674 186 155 0 0 0 0 0 0 31 0 0 0 0 1426
+
+fn=(760)
+0 9 1 1 1 0 0 1 0 0 1 1 0 0 0 5
+cob=(2) ???
+cfi=(2) ???
+cfn=(764) 0x000000000047ab30'__libc_csu_fini'exit'main'(below main)'0x0000000000400190
+calls=1 0 
+0 253 64 79 9 8 0 7 2 0 19 2 1 1
+
+fn=(832)
+0 14 2 1 1 1 0 1 0 0 2 0 0 0 0 43
+
+fn=(504)
+0 35 7 0 1 0 0 1 0 0 7 0 0 0 0 35
+
+fn=(508)
+0 126 14 14 2 0 7 1 0 7 28 1 0 0 0 105
+
+fn=(266) strlen'getenv'_getopt_internal_r'getopt'main'(below main)'0x0000000000400190
+0 45 3 0 0 1 0 0 1 0 11 2 0 0 0 71
+
+fn=(354)
+0 450 42 0 4 10 0 0 9 0 104 20 0 0 0 526
+
+fn=(738)
+0 75 15 0 0 2 0 0 0 0 20 4 0 0 0 190
+
+fn=(288)
+0 16 7 5 0 0 0 0 0 0 1 0 0 0 0 19
+
+fn=(292)
+0 31 5 6 4 0 0 4 0 0 7 3 0 0 0 48
+cfn=(296) _int_memalign'memalign'memalign_hook_ini'valloc'main'(below main)'0x0000000000400190
+calls=1 0 
+0 416 78 61 27 0 4 27 0 4 64 27
+0 19 7 1 1 0 0 1 0 0 4 2 0 0 0 27
+
+fn=(374)
+0 4166 964 498 5 8 0 3 7 0 1256 42 0 0 0 8660
+
+fn=(432) sin'InitU'main'(below main)'0x0000000000400190
+0 28665 6138 2343 56 4 1 56 4 0 2646 180 0 0 0 39110
+
+fn=(444) sin'InitU2'main'(below main)'0x0000000000400190
+0 1818536 265424 327696 1 0 0 1 0 0 153783 2090 0 0 0 3050074
+cfn=(456)
+calls=8 0 
+0 4280 500 80 45 10 0 45 3 0 184 37
+0 1537703 388077 132421 0 0 0 0 0 0 169494 2695 0 0 0 3766381
+cfn=(456)
+calls=7 0 
+0 3752 441 70 0 10 0 0 3 0 161 10
+0 1993549 416094 76649 1 0 0 1 0 0 224556 2953 0 0 0 1859481
+cfn=(466)
+calls=7 0 
+0 4035 647 138 2 7 6 2 4 0 179 35
+0 1774997 439322 61860 17 0 0 17 0 0 100961 9702 0 0 0 1131179
+cfn=(466)
+calls=2 0 
+0 1150 200 44 0 1 2 0 0 0 50 10
+0 39326 6635 3521 12 0 0 12 0 0 1121 73 0 0 0 18075
+cfn=(456)
+calls=5 0 
+0 2672 311 50 0 8 0 0 4 0 115 10
+0 65840 16841 170 14 0 0 14 0 0 1075 107 0 0 0 13170
+
+fn=(668)
+0 112 14 7 2 0 0 2 0 0 21 0 0 0 0 378
+
+fn=(704)
+0 85 10 5 1 0 0 1 0 0 0 0 0 0 0 220
+
+fn=(724)
+0 312 48 40 1 0 0 1 0 0 16 1 0 0 0 384
+
+fn=(848)
+0 3 0 2 1 0 0 1 0 0 0 0 0 0 0 3
+cfn=(852) _IO_default_setbuf'_IO_file_setbuf'_IO_cleanup'exit'main'(below main)'0x0000000000400190
+calls=1 0 
+0 60 18 19 6 0 0 6 0 0 6 1 1 1
+0 12 3 6 1 0 0 1 0 0 1 1 0 0 0 13
+
+fn=(856) _IO_file_sync'_IO_default_setbuf'_IO_file_setbuf'_IO_cleanup'exit'main'(below main)'0x0000000000400190
+0 22 9 5 2 0 0 2 0 0 2 0 0 0 0 24
+
+fn=(488)
+0 112 7 49 1 1 0 1 0 0 7 0 0 0 0 98
+cfn=(492)
+calls=7 0 
+0 1963 296 519 35 17 38 20 2 34 271 30 14 2
+0 364 119 63 5 4 0 5 0 0 42 2 0 0 0 413
+cfn=(498)
+calls=7 0 
+0 287 42 35 4 2 14 3 0 14 77 16
+0 28 0 7 0 0 0 0 0 0 0 0 0 0 0 14
+cfn=(500) memset'_dl_allocate_tls'pthread_create'pthread_create*'main'(below main)'0x0000000000400190
+calls=7 0 
+0 133 14 42 0 1 0 0 1 0 14 2 7 1
+0 105 70 7 1 0 0 1 0 0 7 2 0 0 0 98
+
+fn=(500)
+0 133 14 42 0 1 0 0 1 0 14 2 7 1 0 119
+
+fn=(496)
+0 511 28 245 6 2 21 4 2 21 49 6 14 2 0 511
+
+fn=(264)
+0 8 0 6 0 0 0 0 0 0 0 0 0 0 0 8
+cfn=(266)
+calls=1 0 
+0 45 3 0 0 1 0 0 1 0 11 2
+0 149 53 0 0 0 0 0 0 0 46 4 0 0 0 282
+
+fn=(306) _int_malloc'_int_memalign'valloc'main'(below main)'0x0000000000400190
+0 1010 168 152 10 0 3 10 0 3 132 55 0 0 0 1503
+cfn=(310)
+calls=3 0 
+0 18 3 0 1 0 0 1 0 0 3
+0 72 12 15 2 0 3 2 0 3 12 2 0 0 0 96
+
+fn=(298) _int_malloc'_int_memalign'memalign'memalign_hook_ini'valloc'main'(below main)'0x0000000000400190
+0 126 21 21 2 0 1 2 0 1 13 10 0 0 0 186
+
+fn=(494)
+0 941 156 211 21 10 15 8 0 13 117 18 0 0 0 1178
+
+fn=(582)
+0 126 21 21 0 0 1 0 0 1 13 5 0 0 0 186
+
+fn=(802)
+0 16 5 3 0 0 0 0 0 0 4 0 0 0 0 35
+cfi=(5)
+cfn=(805)
+calls=1 111 
+0 26 9 10
+
+fn=(556)
+0 16 5 3 0 0 0 0 0 0 4 1 0 0 0 35
+cfi=(5)
+cfn=(559)
+calls=1 111 
+0 26 9 10
+
+fn=(304)
+0 198 36 36 0 0 0 0 0 0 24 9 0 0 0 222
+cfn=(306)
+calls=6 0 
+0 1100 183 167 13 0 6 13 0 6 147 57
+0 201 9 12 0 0 3 0 0 3 27 5 0 0 0 213
+cfn=(312)
+calls=3 0 
+0 288 69 51 0 0 1 0 0 1 60 4
+0 75 6 9 0 0 3 0 0 3 6 0 0 0 0 90
+cfn=(312)
+calls=3 0 
+0 240 63 30 2 0 0 2 0 0 51 10
+0 36 6 6 0 0 3 0 0 3 0 0 0 0 0 33
+
+fn=(296)
+0 33 6 6 4 0 0 4 0 0 4 3 0 0 0 37
+cfn=(298)
+calls=1 0 
+0 126 21 21 2 0 1 2 0 1 13 10
+0 35 1 2 3 0 0 3 0 0 5 3 0 0 0 37
+cfn=(302)
+calls=1 0 
+0 96 23 17 13 0 1 13 0 1 20 5
+0 25 2 3 1 0 1 1 0 1 2 0 0 0 0 30
+cfn=(302)
+calls=1 0 
+0 89 23 10 2 0 0 2 0 0 20 6
+0 12 2 2 2 0 1 2 0 1 0 0 0 0 0 11
+
+fn=(330)
+0 17 8 4 2 1 0 2 1 0 2 2 1 1 0 23
+cfn=(334)
+calls=1 0 
+0 89 18 12 9 2 0 9 2 0 10 1 1 1
+0 2 0 0 1 0 0 1 0 0 1 1 0 0 0 5
+
+fn=(664)
+0 42 14 28 1 1 0 1 0 0 0 0 0 0 0 42
+
+fn=(672)
+0 126 21 7 1 0 0 1 0 0 28 2 0 0 0 441
+
+fn=(852)
+0 9 2 4 2 0 0 2 0 0 0 0 1 1 0 8
+cfn=(856)
+calls=1 0 
+0 22 9 5 2 0 0 2 0 0 2
+0 29 7 10 2 0 0 2 0 0 4 1 0 0 0 39
+
+fl=(6)
+fn=(546) SlaveStart'main'(below main)'0x0000000000400190
+420 7 0 6 0 0 0 0 0 0 0 0 0 0 0 7
++10 1 1
+-4 1 0 1 0 0 0 0 0 0 0 0 0 0 0 1
++4 2 0 1 0 0 0 0 0 0 0 0 0 0 0 3
+cfi=(5)
+cfn=(548)
+calls=1 93 
+* 91 22 33 0 0 0 0 0 0 3 1
++1 2 2
++2 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+-1 2 0 1 0 0 0 0 0 0 0 0 0 0 0 1
++1 1 0 1 0 0 0 0 0 0 0 0 0 0 0 2
+cfi=(5)
+cfn=(554)
+calls=1 105 
+* 86 23 33 0 0 0 0 0 0 4 1
++7 3 1 1 0 0 0 0 0 0 0 0 0 0 0 3
+cfi=(5)
+cfn=(560)
+calls=1 119 
+* 90 24 34 1 0 0 1 0 0 4 3
++2 4 1 1 0 0 0 0 0 0 0 0 0 0 0 5
+cfi=(1)
+cfn=(580)
+calls=1 0 
+* 165 31 27 0 0 1 0 0 1 22 5
++1 1
+-1 1
++1 1 0 0 0 0 0 0 0 0 1 0 0 0 0 3
++4 4 1 0 0 0 0 0 0 0 1 0 0 0 0 3
+-28 1
++26 1 1
+-26 14 0 0 0 0 0 0 0 0 4 0 0 0 0 19
++29 1788 510 255 0 0 63 0 0 63 256 1 0 0 0 2549
++3 2 1
++5 1 1
+-5 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1
++5 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+-5 3 0 0 0 0 0 0 0 0 0 0 0 0 0 4
++1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+-1 1
++1 4 0 0 0 0 0 0 0 0 0 0 0 0 0 6
++4 1 0 1 0 0 0 0 0 0 0 0 0 0 0 2
+cfi=(5)
+cfn=(560)
+calls=1 119 
+* 134 37 42 0 0 0 0 0 0 10 1
++5 5 1 0 0 0 0 0 0 0 2 0 0 0 0 6
++5 19 7 9 0 0 1 0 0 0 0 0 0 0 0 10
+cfn=(606) FFT1D'SlaveStart'main'(below main)'0x0000000000400190
+calls=1 593 
+* 3845785 524081 376046 0 14942 8231 0 0 2048 321649 7349
++4 3 1 0 0 0 0 0 0 0 1 1 0 0 0 3
++5 4 1 0 0 0 0 0 0 0 2 0 0 0 0 6
++9 8 7 0 0 2 0 0 0 0 0 0 0 0 0 9
+-13 18 7 9 0 0 1 0 0 0 0 0 0 0 0 9
+cfn=(606)
+calls=1 593 
+* 3927897 540497 392430 0 14774 8231 0 0 0 329873 7374
+* 1
+
+fn=(424) InitU'main'(below main)'0x0000000000400190
+541 9 0 6 1 0 1 1 0 0 0 0 0 0 0 7
++6 2 0 0 0 0 0 0 0 0 1 0 0 0 0 1
++4 2 1 1 0 0 0 0 0 0 0 0 0 0 0 1
+-4 1
++4 1 0 1 0 0 0 0 0 0 0 0 0 0 0 1
+-1 18 9 0 1 0 0 1 0 0 9 0 0 0 0 18
+-1 18 9 0 0 0 0 0 0 0 0 0 0 0 0 18
++2 9
+-2 9 0 9 0 0 1 0 0 0 0 0 0 0 0 9
++2 1312 18 257 0 0 0 0 0 0 257 1 0 0 9 1064
++3 256 0 0 1 0 0 1 0 0 0 0 0 0 256 512
+-4 256 0 0 0 0 0 0 0 0 0 0 0 0 0 256
++4 1280 512 512 0 1 0 0 0 0 0 0 0 0 0 768
+cfi=(1)
+cfn=(428)
+calls=256 0 
+* 29218 6506 2617 52 38 3 52 37 0 2412 216
+* 256 256 0 0 0 0 0 0 0 0 0 0 0 0 256
++1 256 256 0 1 0 0 1
+-1 512 0 256 0 0 64 0 0 64 0 0 0 0 0 768
++1 1024 512 256 0 0 0 0 0 0 0 0 0 0 0 768
+cfi=(1)
+cfn=(432)
+calls=256 0 
+* 28665 6138 2343 56 4 1 56 4 0 2646 180
+* 256 256 0 0 0 0 0 0 0 0 0 0 0 0 256
+-5 256 256 0 0 0 0 0 0 0 0 0 0 0 0 256
++5 512 0 256 0 0 0 0 0 0 0 0 0 0 0 1024
+-5 256 0 0 0 0 0 0 0 0 256 24 0 0 0 256
+-3 64 16 16 0 0 0 0 0 0 8 7 0 0 0 152
++11 8 7 0 0 0 0 0 0 0 0 0 0 0 0 9
+
+fn=(396) InitX'main'(below main)'0x0000000000400190
+526 6 0 5 1 0 0 1 0 0 0 0 0 0 0 5
++3 2 0 1 1 0 0 1 0 0 0 0 0 0 0 2
+cfi=(1)
+cfn=(400)
+calls=1 0 
+* 14 1 6 3 0 0 3
++1 5 2 0 0 0 0 0 0 0 1 0 0 0 0 1
++1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 2
++1 3 0 0 0 0 0 0 0 0 1 0 0 0 0 1
+-7 7 0 0 0 0 0 0 0 0 0 0 0 0 0 7
++8 1 0 1 1 0 0 1 0 0 0 0 0 0 0 2
+cfi=(1)
+cfn=(408)
+calls=1 0 
+* 67 17 9 3 1 0 3 1 0 2
+-8 1785 0 0 0 0 0 0 0 0 0 0 0 0 0 1785
++8 255 0 255 0 0 0 0 0 0 0 0 0 0 0 510
+cfi=(1)
+cfn=(408)
+calls=255 0 
+* 17085 4335 2295 0 0 0 0 0 0 510
+* 65280 0 65280 0 0 0 0 0 0 0 0 0 0 0 130560
+cfi=(1)
+cfn=(408)
+calls=65280 0 
+* 4373760 1109760 587520 0 0 0 0 0 0 130560
+* 65536 0 65536 0 0 16384 0 0 16384
+-1 131072 0 0 0 0 0 0 0 0 0 0 0 0 0 131072
++2 65536 0 65536 0 0 0 0 0 0 0 0 0 0 0 131072
+cfi=(1)
+cfn=(408)
+calls=65536 0 
+* 4390912 1114112 589824 0 0 0 0 0 0 131072
+-2 65536 65536
++2 65536 0 65536
+-2 196608 0 0 0 0 0 0 0 0 65536 259 0 0 0 131072
+-2 1023 255 0 0 0 0 0 0 0 256 1 0 0 0 512
++1 510 0 0 1 0 0 1 0 0 0 0 0 0 0 510
++1 510 0 0 0 0 0 0 0 0 255 2 0 0 0 255
++5 6 6 0 0 1 0 0 0 0 0 0 0 0 0 7
+
+fn=(420) CheckSum'main'(below main)'0x0000000000400190
+514 6 2 0 2 1 0 1 0 0 2 0 0 0 0 2
+-6 20 2 0 2 0 0 1 0 0 0 0 0 0 0 6
++9 2 2 0 0 2
+-1 4 0 0 0 0 0 0 0 0 0 0 0 0 0 2
++1 2 2
+-1 4 0 0 0 0 0 0 0 0 0 0 0 0 0 2
++1 2
+-1 2 0 0 0 0 0 0 0 0 2 2 0 0 0 6
+-8 2040 0 0 0 0 0 0 0 0 0 0 0 0 0 510
++9 510 510 0 0 510
+-1 1020 0 0 0 0 0 0 0 0 0 0 0 0 0 510
++1 510 510
+-1 1020 0 0 0 0 0 0 0 0 0 0 0 0 0 510
++1 510
+-1 510 0 0 0 0 0 0 0 0 510 4 0 0 0 1530
++1 130560 130560 0 0 32256
+-1 261120 0 0 0 0 0 0 0 0 0 0 0 0 0 261120
++1 130560 130560
+-1 261120 0 0 0 0 0 0 0 0 0 0 0 0 0 130560
++1 130560
+-1 130560 0 0 0 0 0 0 0 0 130560 533 0 0 0 391680
+-2 2048 0 0 2 0 0 1 0 0 512 4 0 0 0 2560
++8 2 2 0 0 2 0 0 0 0 0 0 0 0 0 4
+
+fn=(440) InitU2'main'(below main)'0x0000000000400190
+562 8 0 6 1 0 0 1 0 0 0 0 0 0 0 7
++3 4 1 0 0 0 0 0 0 0 1 0 0 0 1 3
+-4 2
++4 1 0 1 1 0 0 1 0 0 0 0 0 0 0 1
+-4 11 3 4 0 0 0 0 0 0 0 0 0 0 1 5
++7 1
+-1 1 0 0 1 0 0 1
++1 6 3 2 0 0 0 0 0 0 0 0 0 0 0 2
+cfi=(1)
+cfn=(442)
+calls=1 0 
+* 35 9 7 0 0 0 0 0 0 2 1
+-7 1530 0 255 0 0 0 0 0 0 0 0 0 0 255 1020
++7 255 0 0 0 0 0 0 0 0 0 0 0 0 255
+-1 255
++1 1530 765 510 0 0 0 0 0 0 0 0 0 0 0 765
+cfi=(1)
+cfn=(442)
+calls=255 0 
+* 8925 2295 1785 0 0 0 0 0 0 510 9
+* 65280 0 0 0 0 0 0 0 0 0 0 0 0 65280 130560
+-1 65280 0 0 0 0 0 0 0 0 0 0 0 0 0 65280
++1 391680 195840 130560 0 0 0 0 0 0 0 0 0 0 0 261120
+cfi=(1)
+cfn=(442)
+calls=65280 0 
+* 7261187 1632995 638720 84 114 17 84 37 0 600412 27009
++1 65536 65536
+-1 65536 0 65536 0 0 16384 0 0 16384
+-1 65536 0 0 0 0 0 0 0 0 0 0 0 0 0 65536
++2 327680 196608 65536 1 0 0 1 0 0 0 0 0 0 0 262144
+cfi=(1)
+cfn=(444)
+calls=65536 0 
+* 7245840 1534492 602699 92 36 8 92 14 0 651679 17722
+* 65536 0 65536
+-2 196608 0 0 0 0 0 0 0 0 65536 309 0 0 0 262144
+-2 1024 256 0 0 0 0 0 0 0 256 22 0 0 0 1536
++7 8 7 0 0 1 0 0 0 0 0 0 0 0 0 9
+
+fn=(606)
+593 2 0 2 0 0 0 0 0 0 0 0 0 0 0 2
++7 4 0 0 0 0 0 0 0 0 0 0 0 0 0 2
+-7 2 0 2 0 0 0 0 0 0 0 0 0 0 0 2
++7 4 0 0 0 0 0 0 0 0 0 0 0 0 0 4
+-7 10 0 8 0 0 0 0 0 0 0 0 0 0 0 8
++8 2
+-8 2 0 0 0 0 0 0 0 0 0 0 0 0 0 2
++10 2 2
+-10 2 0 2 0 0 0 0 0 0 0 0 0 0 0 2
++8 2 0 0 0 0 0 0 0 0 0 0 0 0 0 4
+-8 2 0 2 0 0 0 0 0 0 0 0 0 0 0 2
++8 2 0 0 0 0 0 0 0 0 0 0 0 0 0 8
+-8 4 0 4 0 0 1 0 0 0 0 0 0 0 0 4
++10 2 0 0 0 0 0 0 0 0 0 0 0 0 0 2
+-10 2 2 0 0 0 0 0 0 0 0 0 0 0 0 2
++7 2 0 2 0 0 0 0 0 0 0 0 0 0 0 2
++3 2 0 2 0 0 0 0 0 0 0 0 0 0 0 4
+cfi=(5)
+cfn=(608)
+calls=2 119 
+* 268 74 84 0 4 8 0 0 0 20 2
++2 2 2 0 0 2 0 0 0 0 0 0 0 0 0 2
+-4 2 0 0 0 0 0 0 0 0 0 0 0 0 0 4
++4 12 2 2 0 2 2 0 0 0 2 0 0 0 0 32
++5 18 10 4 0 0 2 0 0 0 0 0 0 0 0 14
+cfn=(630) Transpose'FFT1D'SlaveStart'main'(below main)'0x0000000000400190
+calls=2 +91 
+* 188058 33404 33164 0 4176 4100 0 0 2048 16980 535
++8 6 4 0 0 2 0 0 0 0 2 0 0 0 0 10
+-27 8 4 2 0 2 2 0 0 0 0 0 0 0 0 6
++27 4 0 0 0 0 0 0 0 0 0 0 0 0 0 4
+-27 28 6 4 0 2 0 0 0 0 0 0 0 0 0 28
++28 12 4 2 0 0 0 0 0 0 0 0 0 0 0 8
+cfn=(632) FFT1DOnce'FFT1D'SlaveStart'main'(below main)'0x0000000000400190
+calls=2 809 
+* 103876 13262 9164 0 240 0 0 0 0 8736 201
+* 372 124 62 0 0 0 0 0 0 0 0 0 0 0 248
+cfn=(632)
+calls=62 809 
+* 3220156 411122 284084 0 4298 0 0 0 0 270816 6274
++59 192 0 0 0 0 0 0 0 0 64 0 0 0 64 192
+-87 448 128 0 0 3 0 0 0 0 0 0 0 0 0 256
++89 64 64 0 0 64
+-2 64
++1 64 64
+-1 64 0 0 0 0 0 0 0 0 0 0 0 0 0 64
++2 64
+-2 64 0 0 0 0 0 0 0 0 0 0 0 0 0 64
++3 64 64
++2 64
+-1 64 64 0 0 0 0 0 0 0 0 0 0 0 0 64
++1 128
++1 64
+-1 64
++1 64
+-1 64
++1 64
+-1 64 0 64
++1 64 0 64
+-6 192 0 0 0 0 0 0 0 0 64 0 0 0 0 128
++2 16320 16320 0 0 4032
+-2 16320 0 0 0 0 0 0 0 0 0 0 0 0 0 16320
++1 16320 16320
+-1 16320 0 0 0 0 0 0 0 0 0 0 0 0 0 16320
++2 16320
+-2 16320 0 0 0 0 0 0 0 0 0 0 0 0 0 16320
++3 16320 16320
++2 16320
+-1 16320 16320 0 0 0 0 0 0 0 0 0 0 0 0 16320
++1 32640
++1 16320
+-1 16320
++1 16320
+-1 16320
++1 16320
+-1 16320 0 16320
++1 16320 0 16320
+-6 48960 0 0 0 0 0 0 0 0 16320 64 0 0 0 32640
+-60 322 66 0 0 0 0 0 0 0 64 2 0 0 0 322
++5 6 2 2 0 2 0 0 0 0 0 0 0 0 0 6
+cfi=(5)
+cfn=(608)
+calls=2 119 
+* 186 52 68 0 6 12 0 0 0 14 3
++2 4 2 0 0 2 0 0 0 0 2 0 0 0 0 14
++4 18 10 4 0 4 2 0 0 0 0 0 0 0 0 14
+cfn=(630)
+calls=2 +72 
+* 188058 33404 33164 0 4176 4100 0 0 0 16980 534
++8 6 4 0 0 2 0 0 0 0 2 0 0 0 0 10
+-46 4 4 0 0 2 0 0 0 0 0 0 0 0 0 4
++46 4 0 0 0 0 0 0 0 0 0 0 0 0 0 4
+-46 8 2 0 0 0 0 0 0 0 0 0 0 0 0 10
++46 128 0 0 0 0 0 0 0 0 32 1 0 0 0 96
++1 384 128 64 0 4 0 0 0 0 0 0 0 0 0 256
+cfn=(632)
+calls=64 809 
+* 3324032 424384 293248 0 4374 0 0 0 0 279552 6469
++1 128 0 0 0 0 0 0 0 0 64 0 0 0 0 192
++54 192 32 0 0 1 0 0 0 0 32 0 0 0 32 128
++1 32 32
+-1 32
++1 64 0 32
++1 96 32 32 0 0 0 0 0 0 0 0 0 0 0 32
+-2 96 0 0 0 0 0 0 0 0 32 0 0 0 0 64
++1 8160 8160
+-1 8160 0 0 0 0 0 0 0 0 0 0 0 0 0 8160
++1 16320 0 8160
++1 24480 8160 8160 0 0 0 0 0 0 0 0 0 0 0 8160
+-2 24480 0 0 0 0 0 0 0 0 8160 32 0 0 0 16320
+-56 128 0 0 0 0 0 0 0 0 32 1 0 0 0 96
++6 6 2 2 0 1 0 0 0 0 0 0 0 0 0 6
+cfi=(5)
+cfn=(608)
+calls=2 119 
+* 186 52 68 0 3 11 0 0 0 14 2
++2 4 2 0 0 2 0 0 0 0 2 0 0 0 0 14
++5 18 10 4 0 4 2 0 0 0 0 0 0 0 0 14
+cfn=(630)
+calls=2 +51 
+* 188058 33404 33164 0 4176 4100 0 0 0 16980 533
++7 6 2 2 0 2 0 0 0 0 0 0 0 0 0 6
+cfi=(5)
+cfn=(608)
+calls=2 119 
+* 268 74 84 0 12 8 0 0 0 20
++3 4 2 0 0 2 0 0 0 0 2 0 0 0 0 8
++1 4 2 0 0 0 0 0 0 0 2 0 0 0 0 8
+-1 2 2 0 0 0 0 0 0 0 0 0 0 0 0 2
+-69 6 6 0 0 2 0 0 0 0 0 0 0 0 0 6
++69 4 0 0 0 0 0 0 0 0 0 0 0 0 0 4
+-69 12 2 0 0 0 0 0 0 0 0 0 0 0 0 12
+787 320 0 0 0 0 0 0 0 0 64 0 0 0 0 64
++1 64 64 0 0 64
+-1 64
++1 64 0 64 0 0 64
++1 128 64 64 0 0 0 0 0 0 0 0 0 0 0 128
+-2 192 0 0 0 0 0 0 0 0 64 1 0 0 0 64
++1 16320 16320 0 0 4032 0 0 0 0 0 0 0 0 0 16320
+-1 16320 0 0 0 0 0 0 0 0 0 0 0 0 0 16320
++1 16320 0 16320 0 0 4032 0 0 0 0 0 0 0 0 16320
++1 32640 16320 16320 0 0 0 0 0 0 0 0 0 0 0 65280
+-2 48960 0 0 0 0 0 0 0 0 16320 64 0 0 0 32640
+661 320 0 0 0 0 0 0 0 0 64 2 0 0 0 256
++5 6 2 2 0 2 2 0 0 0 0 0 0 0 0 6
+cfi=(5)
+cfn=(608)
+calls=2 119 
+* 268 74 84 0 10 14 0 0 0 20 3
++1 16 14 0 0 4 0 0 0 0 0 0 0 0 0 18
+
+fn=(630)
+701 48 0 42 0 0 0 0 0 0 0 0 0 0 0 48
++16 6
+-16 6 0 6 0 0 0 0 0 0 0 0 0 0 0 6
++16 6 0 0 0 0 0 0 0 0 0 0 0 0 0 6
++1 6 6 0 0 6
+-17 6 0 6 0 0 0 0 0 0 0 0 0 0 0 6
++17 6 0 0 0 0 0 0 0 0 0 0 0 0 0 6
+-17 6 0 6 0 0 0 0 0 0 0 0 0 0 0 6
++17 24 0 0 0 0 0 0 0 0 0 0 0 0 0 24
++1 6 0 0 0 0 0 0 0 0 0 0 0 0 0 6
++1 18 0 0 0 0 0 0 0 0 0 0 0 0 0 24
++2 6
+-2 6 0 6 0 0 0 0 0 0 0 0 0 0 0 6
++2 18 6 0 0 0 0 0 0 0 0 0 0 0 0 30
++2 24 6 6 0 0 6 0 0 0 0 0 0 0 0 12
+-2 6
++2 6
++1 6 6 0 0 0 0 0 0 0 0 0 0 0 0 12
+-1 6 6 0 0 0 0 0 0 0 0 0 0 0 0 24
++2 6 6 0 0 0 0 0 0 0 0 0 0 0 0 6
+-26 6
++25 6 0 6 0 0 0 0 0 0 0 0 0 0 0 6
+-25 6
++26 6 0 0 0 0 0 0 0 0 0 0 0 0 0 6
+-26 6 0 0 0 0 0 0 0 0 0 0 0 0 0 6
++26 6 0 6 0 0 0 0 0 0 0 0 0 0 0 6
+-2 6 0 6 0 0 0 0 0 0 0 0 0 0 0 6
+-24 222 30 54 0 0 0 0 0 0 0 0 0 0 0 222
++26 18 12 0 0 0 0 0 0 0 6 6 0 0 0 30
+-26 168 60 42 0 0 0 0 0 0 0 0 0 0 0 198
++45 144 96 0 0 42 0 0 0 0 48 8 0 0 0 240
++2 84 42 0 0 0 0 0 0 0 42 0 0 0 0 84
+-47 378 168 210 0 0 0 0 0 0 0 0 0 0 0 336
++47 294 168 126 0 0 6 0 0 0 0 0 0 0 0 252
++3 84 0 0 0 0 0 0 0 0 42 0 0 0 0 42
+-50 504 84 0 0 0 0 0 0 0 0 0 0 0 0 84
++54 42 42 0 0 42
+-2 84 0 0 0 0 0 0 0 0 0 0 0 0 0 42
++2 42 0 42 0 0 42 0 0 7
++1 42 42
+-3 84 0 0 0 0 0 0 0 0 0 0 0 0 0 84
++3 42 0 42
+-3 126 0 0 0 0 0 0 0 0 42 2 0 0 0 168
+-52 7812
++54 1302 1302 0 0 1302
+-2 2604 0 0 0 0 0 0 0 0 0 0 0 0 0 1302
++2 1302 0 1302 0 0 294 0 0 49
++1 1302 1302
+-3 2604 0 0 0 0 0 0 0 0 0 0 0 0 0 2604
++3 1302 0 1302
+-3 3906 0 0 0 0 0 0 0 0 1302 0 0 0 0 5208
++2 41664 41664 0 0 9408
+-2 83328 0 0 0 0 0 0 0 0 0 0 0 0 0 83328
++2 41664 0 41664 0 0 10416 0 0 1736
++1 41664 41664
+-3 83328 0 0 0 0 0 0 0 0 0 0 0 0 0 83328
++3 41664 0 41664
+-3 124992 0 0 0 0 0 0 0 0 41664 1346 0 0 0 166656
+-2 9408 0 0 0 0 0 0 0 0 1344 42 0 0 0 10752
+-1 420 294 126 0 84 0 0 0 0 42 0 0 0 0 630
+-2 420 378 210 0 84 0 0 0 0 42 0 0 0 0 672
+-2 336 294 210 0 0 0 0 0 0 0 0 0 0 0 504
++19 6 6 0 0 0 0 0 0 0 0 0 0 0 0 12
+-64 168 54 30 0 0 0 0 0 0 0 0 0 0 0 198
++65 36 24 0 0 0 0 0 0 0 12 0 0 0 0 60
++2 66 24 30 0 0 0 0 0 0 6 0 0 0 0 60
++1 12 0 0 0 0 0 0 0 0 6 0 0 0 0 6
+-68 30 24 0 0 0 0 0 0 0 0 0 0 0 0 24
++65 36
++7 6 6 0 0 6
+-2 12 0 0 0 0 0 0 0 0 0 0 0 0 0 6
++2 6 0 6 0 0 6 0 0 1
++1 6 6
+-3 12 0 0 0 0 0 0 0 0 0 0 0 0 0 12
++3 6 0 6
+-3 18 0 0 0 0 0 0 0 0 6 0 0 0 0 24
+-5 1116
++7 186 186 0 0 186
+-2 372 0 0 0 0 0 0 0 0 0 0 0 0 0 186
++2 186 0 186 0 0 42 0 0 7
++1 186 186
+-3 372 0 0 0 0 0 0 0 0 0 0 0 0 0 372
++3 186 0 186
+-3 558 0 0 0 0 0 0 0 0 186 0 0 0 0 744
++2 5952 5952 0 0 1344
+-2 11904 0 0 0 0 0 0 0 0 0 0 0 0 0 11904
++2 5952 0 5952 0 0 1488 0 0 248
++1 5952 5952
+-3 11904 0 0 0 0 0 0 0 0 0 0 0 0 0 11904
++3 5952 0 5952
+-3 17856 0 0 0 0 0 0 0 0 5952 192 0 0 0 23808
+-2 1344 0 0 0 0 0 0 0 0 192 6 0 0 0 1536
+-1 48 42 30 0 12 0 0 0 0 6 0 0 0 0 90
+-2 36 30 30 0 6 0 0 0 0 0 0 0 0 0 60
++15 48 42 0 0 6 0 0 0 0 0 0 0 0 0 54
+
+fn=(246)
+125 7 0 5 1 0 0 1 0 0 0 0 0 0 0 7
++9 1
+-9 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1
++9 2 0 1 0 0 0 0 0 0 0 0 0 0 0 2
+cfi=(1)
+cfn=(250)
+calls=1 0 
+* 10 2 1 2 0 0 2 0 0 1
+* 3 2 0 1 0 0 1 0 0 0 0 0 0 0 1
++2 4 0 1 0 0 0 0 0 0 0 0 0 0 0 4
+cfi=(1)
+cfn=(258)
+calls=1 0 
+* 397 115 43 17 2 1 17 2 1 94 17
+* 16 0 4 0 0 0 0 0 0 0 0 0 0 0 16
+cfi=(1)
+cfn=(258)
+calls=4 0 
+* 696 198 110 3 0 0 3 0 0 143 35
+* 15 0 0 0 0 0 0 0 0 5 1 0 0 0 45
++1 20 4 0 0 2 0 0 2 0 4 0 4 4 0 56
++33 4 1 1 1 0 0 1 0 0 0 0 0 0 0 4
++1 1
+fi=(8) /usr/include/stdlib.h
+336 5 1 1 1 0 0 1 0 0 0 0 0 0 0 2
+cfi=(1)
+cfn=(274)
+calls=1 0 
+* 113 22 9 0 0 0 0 0 0 23 5
+fe=(6)
+138 1 0 0 0 0 0 0 0 0 0 0 0 0 0 2
++1 1
+-1 1 0 1
++1 1 0 0 0 0 0 0 0 0 1 0 0 0 0 1
++2 1
+884 1
+141 1
+884 2 0 0 0 0 0 0 0 0 1 0 0 0 0 1
++4 1 0 0 1 0 0 1 0 0 0 0 0 0 0 1
+-4 2 0 0 0 0 0 0 0 0 1 0 0 0 0 1
++4 2 0 0 0 0 0 0 0 0 0 0 0 0 0 2
+-4 10 0 0 0 0 0 0 0 0 4 3 0 0 0 22
+fi=(8)
+336 5 1 1 1 0 0 1 0 0 0 0 0 0 0 2
+cfi=(1)
+cfn=(274)
+calls=1 0 
+* 135 23 9 12 5 0 12 5 0 29 6
+fe=(6)
+148 1 0 0 0 0 0 0 0 0 0 0 0 0 0 2
++2 1
+-2 1 0 1
++2 5 0 0 1 0 0 1 0 0 1 1 0 0 0 6
+fi=(8)
+336 5 1 1 0 0 0 0 0 0 0 0 0 0 0 2
+cfi=(1)
+cfn=(274)
+calls=1 0 
+* 113 22 9 0 0 0 0 0 0 23 2
+fe=(6)
+162 1 0 0 0 0 0 0 0 0 0 0 0 0 0 2
++1 1 0 0 1 0 0 1
+-1 1 0 1
++1 1 0 0 0 0 0 0 0 0 1 1 0 0 0 1
+893 3 0 0 1 0 0 1 0 0 1 0 0 0 0 3
+195 3 1
++1 1
+-1 3 0 1 0 0 1 0 0 1 0 0 0 0 0 6
++1 6 0 0 1 0 0 1 0 0 0 0 0 0 0 9
++1 1
+-1 1 0 1 0 0 1 0 0 1
++1 2 1 0 0 0 0 0 0 0 0 0 0 0 0 5
++1 1
+-1 1 0 1
++1 1 0 0 0 0 0 0 0 0 1 0 0 0 0 3
++5 3 1 0 0 0 0 0 0 0 0 0 0 0 0 10
++1 1 0 0 1 0 0 1
+-1 1 0 1
++1 1 0 0 0 0 0 0 0 0 1 0 0 0 0 3
++13 1 1
+-5 5 0 0 0 0 0 0 0 0 0 0 0 0 0 5
++5 6 1 0 1 0 0 1 0 0 1 0 0 0 0 5
++1 6 0 0 0 0 0 0 0 0 0 0 0 0 0 3
++1 6 0 0 0 0 0 0 0 0 1 0 0 0 0 6
++3 3 0 1 0 0 0 0 0 0 0 0 0 0 0 4
++12 2 0 1 1 0 0 1 0 0 0 0 0 0 0 2
+cfi=(1)
+cfn=(282)
+calls=1 0 
+* 523 107 81 36 0 4 36 0 4 79 33 1 1
+* 1 0 1
++1 6 3 1 0 0 0 0 0 0 0 0 0 0 0 7
+cfi=(1)
+cfn=(282)
+calls=1 0 
+* 352 62 49 15 0 2 15 0 2 54 22
+* 1 0 1
++1 6 3 1 1 0 0 1 0 0 0 0 0 0 0 7
+cfi=(1)
+cfn=(282)
+calls=1 0 
+* 298 55 40 0 0 2 0 0 2 44 18
++1 1 1
+-1 1 0 1 0 0 1 0 0 1
++1 2 0 1 0 0 0 0 0 0 0 0 0 0 0 4
+cfi=(1)
+cfn=(282)
+calls=1 0 
+* 467 94 68 0 0 4 0 0 4 75 19
+* 1 0 1 1 0 0 1
++1 6 3 1 0 0 0 0 0 0 0 0 0 0 0 7
+cfi=(1)
+cfn=(282)
+calls=1 0 
+* 352 62 49 0 0 2 0 0 2 54 9
++2 2 2
+-2 1 0 1
++2 2 0 1 1 0 0 1 0 0 0 0 0 0 0 4
+cfi=(1)
+cfn=(282)
+calls=1 0 
+* 440 88 68 2 0 3 2 0 3 66 7
++1 1 1
+-1 1 0 1 0 0 0 0 0 0 0 0 0 0 0 1
++1 3 1 1 0 0 0 0 0 0 0 0 0 0 0 4
+cfi=(1)
+cfn=(282)
+calls=1 0 
+* 629 141 101 6 0 3 6 0 3 105 25
++1 1 1
+-1 1 0 1 0 0 0 0 0 0 0 0 0 0 0 1
++1 1 0 0 0 0 0 0 0 0 1 0 0 0 0 3
++3 3 1 0 1 0 0 1 0 0 1 0 0 0 0 3
++3 2 1 0 0 0 0 0 0 0 1 0 0 0 0 3
++3 2 1 0 0 0 0 0 0 0 1 0 0 0 0 3
++3 2 1 0 0 0 0 0 0 0 1 0 0 0 0 3
++5 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1
++31 1
+-31 2 0 1 1 0 0 1 0 0 0 0 0 0 0 1
++1 4 1 1 0 0 0 0 0 0 0 0 0 0 0 2
++1 4 1 1 0 0 0 0 0 0 0 0 0 0 0 2
++29 1 0 1 0 0 0 0 0 0 0 0 0 0 0 2
+cfi=(1)
+cfn=(318)
+calls=1 0 
+* 223 66 42 24 9 1 24 9 1 34 10 3 3
++1 2 0 1 1 0 0 1 0 0 0 0 0 0 0 2
+cfi=(1)
+cfn=(352)
+calls=1 0 
+* 213 47 26 14 1 0 14 1 0 38 9 1 1
++1 4 1 1 0 0 0 0 0 0 0 0 0 0 0 2
+cfi=(1)
+cfn=(366)
+calls=1 0 
+* 990 225 161 49 5 7 49 5 7 164 48 6 6
++1 4 1 1 0 0 0 0 0 0 0 0 0 0 0 2
+cfi=(1)
+cfn=(366)
+calls=1 0 
+* 830 202 143 0 1 1 0 1 1 136 28 6
++1 4 2 0 1 0 0 1 0 0 1 1 0 0 0 3
++6 6 1 1 0 0 0 0 0 0 0 0 0 0 0 12
+cfi=(1)
+cfn=(366)
+calls=1 0 
+* 906 213 150 3 1 0 3 1 0 155 14 5 1
++1 4 0 1 1 0 0 1 0 0 0 0 0 0 0 2
+cfi=(1)
+cfn=(366)
+calls=1 0 
+* 946 217 154 0 1 1 0 1 1 159 14 5
++1 2 0 1 0 0 0 0 0 0 0 0 0 0 0 2
+cfi=(1)
+cfn=(318)
+calls=1 0 
+* 43 19 9 0 0 0 0 0 0 9 2
++2 5 2 1 0 0 0 0 0 0 0 0 0 0 0 4
+cfi=(1)
+cfn=(388)
+calls=1 0 
+* 17 3 5 2 1 1 2 1 1 2 1
++1 4 1 1 1 0 0 1 0 0 0 0 0 0 0 3
+cfi=(1)
+cfn=(392)
+calls=1 0 
+* 36 8 9 4 0 0 4 0 0 5 3
++1 1 1
++1 1 1
+-1 1 0 1
++1 1 0 1 0 0 0 0 0 0 0 0 0 0 0 2
+cfn=(396)
+calls=1 526 
+* 9441057 2294024 1441804 10 2 16384 10 1 16384 328193 262
++2 2 1 0 0 1 0 0 0 0 1 1 0 0 0 3
++3 2 1 0 0 1 0 0 0 0 1 0 0 0 0 3
++5 3 2 1 1 1 0 1 0 0 0 0 0 0 0 2
+cfn=(424)
+calls=1 541 
+* 64456 14752 6530 112 43 70 112 41 64 5589 428
++1 4 3 1 0 0 0 0 0 0 0 0 0 0 0 2
+cfn=(440)
+calls=1 562 
+* 15829295 3628810 1571157 180 151 16409 180 51 16384 1318396 45072
++4 82 8 7 1 1 0 1 0 0 8 1 0 0 0 43
+cfi=(5)
+cfn=(476)
+calls=7 69 
+* 5309 1150 1436 82 40 111 62 6 104 628 69 21 3
+* 15 0 1 1 0 0 1 0 0 7 1 0 0 0 44
+cfn=(546)
+calls=1 +98 
+* 7776157 1065258 768931 1 29718 16528 1 0 2112 651832 14736
++1 60 15 7 1 3 0 1 0 0 8 1 0 0 0 50
+cfi=(5)
+cfn=(656)
+calls=7 81 
+* 1618 393 483 21 16 4 21 0 0 169 6
+* 14 0 0 0 0 0 0 0 0 7 2 0 0 0 42
+-13 2 1 1 0 0 0 0 0 0 0 0 0 0 0 2
+cfn=(420)
+calls=1 514 
+* 526346 131075 0 3 16385 0 3 0 0 65793 277
+* 2 0 1 0 0 1
+-12 4 0 1 1 0 0 1 0 0 0 0 0 0 0 2
+cfi=(1)
+cfn=(366)
+calls=1 0 
+* 926 213 153 0 0 0 0 0 0 148 15 6
+* 1
++27 2 1 0 1 1 0 1 0 0 1 1 0 0 0 3
++9 1 1
++1 1 0 0 1 0 0 1
+-1 3 2 1 0 0 0 0 0 0 0 0 0 0 0 1
++1 1 0 1 0 0 0 0 0 0 0 0 0 0 0 2
+cfi=(1)
+cfn=(318)
+calls=1 0 
+* 45 18 9 4 4 1 0 0 0 10
++1 2 0 1 0 0 0 0 0 0 0 0 0 0 0 2
+cfi=(1)
+cfn=(352)
+calls=1 0 
+* 227 48 27 15 4 0 0 2 0 44 14 1
++1 2 0 1 0 0 0 0 0 0 0 0 0 0 0 2
+cfi=(1)
+cfn=(352)
+calls=1 0 
+* 254 51 28 0 1 1 0 1 1 50 14 1
++1 2 0 1 0 0 0 0 0 0 0 0 0 0 0 2
+cfi=(1)
+cfn=(352)
+calls=1 0 
+* 254 52 29 0 1 1 0 1 1 49 4 1
++3 1 1
+-2 1
++2 4 4 0 1 0 0 1 0 0 0 0 0 0 0 2
+-2 5 0 1 0 0 0 0 0 0 0 0 0 0 2 4
+cfi=(1)
+cfn=(366)
+calls=1 0 
+* 4017 892 561 168 25 20 121 16 13 553 143 19 6
++3 2 1 0 0 0 0 0 0 0 1 1 0 0 0 3
++42 2 1 0 1 0 0 1 0 0 0 0 0 0 0 1
++1 1
+-1 2 0 1 0 0 0 0 0 0 0 0 0 0 0 2
++1 1 0 1 0 0 0 0 0 0 0 0 0 0 0 2
+cfi=(1)
+cfn=(318)
+calls=1 0 
+* 45 18 9 0 0 0 0 0 0 10
++1 2 0 1 0 0 0 0 0 0 0 0 0 0 0 2
+cfi=(1)
+cfn=(352)
+calls=1 0 
+* 227 48 27 0 2 0 0 2 0 44 5 1
++1 5 2 1 0 0 0 0 0 0 0 0 0 0 0 3
+cfi=(1)
+cfn=(366)
+calls=1 0 
+* 1323 285 194 3 1 1 3 1 1 238 26 7 3
++2 5 2 1 1 0 0 1 0 0 0 0 0 0 0 3
+cfi=(1)
+cfn=(366)
+calls=1 0 
+* 1323 285 194 0 0 1 0 0 1 238 15 7
++2 5 2 1 0 0 0 0 0 0 0 0 0 0 0 3
+cfi=(1)
+cfn=(366)
+calls=1 0 
+* 1323 285 194 0 1 1 0 1 1 238 7 7
++3 1 1
+-1 5 2 1 1 0 0 1 0 0 0 0 0 0 0 5
+cfi=(1)
+cfn=(366)
+calls=1 0 
+* 1312 297 200 0 1 1 0 1 1 241 7 8
++3 1 1
+-1 5 2 1 0 0 0 0 0 0 0 0 0 0 0 5
+cfi=(1)
+cfn=(366)
+calls=1 0 
+* 1312 297 200 0 1 0 0 1 0 241 6 8
++2 4 1 1 0 0 0 0 0 0 0 0 0 0 0 2
+cfi=(1)
+cfn=(366)
+calls=1 0 
+* 1288 295 196 0 0 1 0 0 1 239 9 8 1
++2 1 1 0 0 0 0 0 0 0 0 0 0 0 1 2
++1 1 1 0 1 0 0 1
+-1 9 2 1 0 0 0 0 0 0 1 0 0 0 1 8
+cfi=(1)
+cfn=(366)
+calls=1 0 
+* 2821 639 394 0 1 1 0 1 1 429 88 7 2
++2 2 0 1 0 0 0 0 0 0 0 0 0 0 0 2
+cfi=(1)
+cfn=(318)
+calls=1 0 
+* 45 18 9 0 0 0 0 0 0 10
++2 2 1 0 1 0 0 1 0 0 1 1 0 0 0 3
++12 2 0 1 0 0 0 0 0 0 0 0 0 0 0 2
+cfi=(1)
+cfn=(756)
+calls=1 0 
+* 747 198 176 61 23 0 53 11 0 102 41 7 7
+-11 2 1 1 1 0 0 1 0 0 0 0 0 0 0 2
+cfn=(420)
+calls=1 514 
+* 526346 131075 0 3 16386 0 0 0 0 65793 266
++1 1
+-1 1 0 1 0 0 1
++1 1 0 1 0 0 0 0 0 0 0 0 0 0 0 2
+cfi=(1)
+cfn=(352)
+calls=1 0 
+* 237 48 27 0 10 4 0 1 1 47 8 1
++1 7 2 1 1 1 0 1 0 0 0 0 0 0 0 2
+cfi=(1)
+cfn=(366)
+calls=1 0 
+* 8783 1870 1194 41 18 26 38 0 1 1014 238 11 2
++2 7 4 0 1 1 0 1 0 0 2 0 0 0 0 9
++1 2 0 1 0 0 0 0 0 0 0 0 0 0 0 2
+cfi=(1)
+cfn=(352)
+calls=1 0 
+* 235 49 31 0 1 1 0 1 1 40 7 1
+* 1
+
+fn=(632)
+809 128 0 128 0 0 0 0 0 0 0 0 0 0 0 128
+-11 128
++11 896 0 640 0 0 0 0 0 0 0 0 0 0 0 640
+-11 768 0 0 0 0 0 0 0 0 128 0 0 0 0 128
+583 256 0 0 0 0 0 0 0 0 128 0 0 0 0 128
+798 65280
+583 98048 0 0 0 0 0 0 0 0 32640 0 0 0 0 32640
++1 32768
+-1 32768 0 0 0 0 0 0 0 0 0 0 0 0 0 32768
++2 32768 0 0 0 0 0 0 0 0 0 0 0 0 0 32768
+-1 32768 0 0 0 0 0 0 0 0 0 0 0 0 0 98304
+-1 32768
++1 32768 0 0 0 0 0 0 0 0 0 0 0 0 0 65536
+-1 32768 0 0 0 0 0 0 0 0 32768 1 0 0 0 98304
++1 229376
+-1 229376 0 0 0 0 0 0 0 0 0 0 0 0 0 229376
++2 229376 0 0 0 0 0 0 0 0 0 0 0 0 0 229376
+-1 229376 0 0 0 0 0 0 0 0 0 0 0 0 0 688128
+-1 229376
++1 229376 0 0 0 0 0 0 0 0 0 0 0 0 0 458752
+-1 229376 0 0 0 0 0 0 0 0 229376 9 0 0 0 688128
+800 65536 0 0 0 0 0 0 0 0 32768 8580 0 0 0 98304
++1 92160 30720 15360 0 8157 0 0 0 0 0 0 0 0 0 30720
++1 46080 15360 0 0 0 0 0 0 0 0 0 0 0 0 76800
+-1 15360 0 15360
++1 46080 15360 30720 0 0 0 0 0 0 0 0 0 0 0 15360
+-4 196352 0 0 0 0 0 0 0 0 32768 128 0 0 0 163840
++30 384 0 0 0 0 0 0 0 0 128 0 0 0 0 128
++1 1408 0 0 0 0 0 0 0 0 0 0 0 0 0 1664
++1 256 0 0 0 0 0 0 0 0 0 0 0 0 0 128
++1 128
+-1 128 0 0 0 0 0 0 0 0 0 0 0 0 0 256
++1 128 0 0 0 0 0 0 0 0 128 0 0 0 0 128
+-2 9856 0 0 0 0 0 0 0 0 0 0 0 0 0 11648
++1 1792 0 0 0 0 0 0 0 0 0 0 0 0 0 896
++1 896
+-1 896 0 0 0 0 0 0 0 0 0 0 0 0 0 1792
++1 896 0 0 0 0 0 0 0 0 896 0 0 0 0 896
+-23 5120 0 0 0 0 0 0 0 0 0 0 0 0 0 2048
++26 195840 0 0 0 0 0 0 0 0 32640 0 0 0 32640 97920
++2 32640 32640 0 0 62 0 0 0 0 0 0 0 0 0 32640
+-2 32640
++1 32640 32640
++1 32640
++1 32640 32640 0 0 156
++2 32640
+-1 32640 32640 0 0 0 0 0 0 0 0 0 0 0 0 32640
++1 65280
++1 32640
++1 32640 32640 0 0 17
+-2 32640
++1 32640
++3 32640
+-4 32640
++1 32640
++2 32640 32640 0 0 0 0 0 0 0 0 0 0 0 0 32640
++1 32640
++2 32640
+-2 32640 0 32640
++1 65280
++2 32640
+-2 32640 0 32640
++1 32640 0 32640
++1 32640 0 32640
+-12 97920 0 0 0 0 0 0 0 0 32640 1 0 0 0 97920
++2 98432 98432 0 0 514 0 0 0 0 0 0 0 0 0 196864
+-2 98432 0 0 0 0 0 0 0 0 0 0 0 0 0 98432
++1 98432 98432
++1 98432
++1 98432 98432 0 0 1 0 0 0 0 0 0 0 0 0 98432
++2 98432
+-1 98432 98432 0 0 0 0 0 0 0 0 0 0 0 0 98432
++1 196864
++1 98432
++1 98432 98432 0 0 0 0 0 0 0 0 0 0 0 0 98432
+-2 98432
++1 98432
++3 98432
+-4 98432
++1 98432
++2 98432 98432 0 0 0 0 0 0 0 0 0 0 0 0 98432
++1 98432
++2 98432
+-2 98432 0 98432
++1 196864
++2 98432
+-2 98432 0 98432
++1 98432 0 98432
++1 98432 0 98432
+-12 295296 0 0 0 0 0 0 0 0 98432 2944 0 0 0 393728
+-3 163200 0 0 0 0 0 0 0 0 32640 1153 0 0 0 195840
+-3 3072 0 0 0 0 0 0 0 0 1024 128 0 0 0 4096
++22 896 896 0 0 5 0 0 0 0 0 0 0 0 0 1024
+
+fl=(3)
+fn=(786)
+219 1 0 0 1 0 0 1
+cfn=(790) __deregister_frame_info_bases'__deregister_frame_info'0x00000000004001e0'0x000000000047ab30'__libc_csu_fini'exit'main'(below main)'0x0000000000400190
+calls=1 -49 
+* 212 54 72 4 5 0 4 0 0 14 1
+
+fn=(790)
+170 1 0 1 1 0 0 1 0 0 0 0 0 0 0 1
++5 1
+-5 3 0 2 0 0 0 0 0 0 0 0 0 0 0 2
++5 4 1 0 1 1 0 1 0 0 2 1 0 0 0 10
+fi=(4) /home/DREXEL/sjb328/Downloads/gcc-4.4.7_objdir/x86_64-unknown-linux-gnu/libgcc/../../../gcc-4.4.7/libgcc/../gcc/gthr-posix.h
++66 3 1 0 0 1 0 0 0 0 1 0 0 0 0 3
+731 2 0 1 0 0 0 0 0 0 0 0 0 0 0 2
+cfi=(5)
+cfn=(794)
+calls=1 93 
+* 91 22 33 0 2 0 0 0 0 3
+* 1 1
+fe=(3)
+181 2 0 0 0 0 0 0 0 0 1 0 0 0 0 3
++1 4 1 0 1 1 0 1 0 0 1 0 0 0 0 4
+fi=(4)
++59 2 0 0 1 0 0 1 0 0 1 0 0 0 0 3
+763 2 0 1 0 0 0 0 0 0 0 0 0 0 0 2
+cfi=(5)
+cfn=(800)
+calls=1 105 
+* 86 23 33 0 0 0 0 0 0 4
+fe=(3)
+212 2 0 0 0 0 0 0 0 0 1 0 0 0 0 3
++1 1
++1 4 4 0 0 0 0 0 0 0 0 0 0 0 0 5
+-29 2 1 1 0 0 0 0 0 0 0 0 0 0 0 1
++1 1
+
+ob=(2)
+fl=(2)
+fn=(764)
+0 2 0 1 0 0 0 0 0 0 0 0 0 0 0 3
+cob=(1)
+cfi=(1)
+cfn=(768)
+calls=1 0 
+0 249 63 78 9 8 0 7 2 0 19 2 1 1
+0 2 1 0 0 0 0 0 0 0 0 0 0 0 0 3
+
+totals: 34206632 7274547 3795623 930 62873 49603 830 167 35107 2441937 62106 153 40 98797 40950410

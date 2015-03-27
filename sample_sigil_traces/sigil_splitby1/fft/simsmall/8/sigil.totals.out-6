@@ -1,0 +1,45 @@
+Tool: Sigil 
+Version: 1.0
+
+SUMMARY: 
+
+Total Memory Reads(bytes): 110327743            Total Memory Writes(bytes): 68954324             Total Instrs: 65374501             Total Flops: 327949               Iops: 78275964            
+
+Num SMs: 67                   Num funcinsts: 8                    Memory for SM(bytes): 281018368            Memory for funcinsts(bytes): 1344                 Memory for PM(bytes): 8388608              Total Memory Usage: 570426688           
+
+
+
+TREE DUMP
+
+FUNCTION NUMBER, FUNC_INST NUM, Children?, Number of calls
+0, 0, False, 0
+
+
+END TREE DUMP
+
+
+DATA DUMP
+
+THREAD NUMBER        FUNCTION NUMBER      FUNC_INST NUM        FUNCTION NAME                                      PROD?                INSTRS               FLOPS                IOPS                 IPCOMM_UNIQUE        OPCOMM_UNIQUE        IPCOMM               OPCOMM              
+
+
+6                    0                    0                    Thread-6                                           *                    4452001              32736                5330926              725391               0                    971195               0                   
+1                    0                    0                    Thread-1                                                                34210373                                                       332131               0                    479631               0                   
+0                    30000                0                    NO PRODUCER                                                             0                                                              119                  0                    127                  0                   
+0                    20000                0                    SELF                                                                    0                                                              610846               0                    7548513              0                   
+5                    0                    0                    Thread-5                                                                4451967                                                        65560                0                    81944                0                   
+2                    0                    0                    Thread-2                                                                4452215                                                        65544                0                    81928                0                   
+7                    0                    0                    Thread-7                                                                4451961                                                        65536                0                    81920                0                   
+8                    0                    0                    Thread-8                                                                4452015                                                        65536                0                    81920                0                   
+3                    0                    0                    Thread-3                                                                4451947                                                        65548                0                    81932                0                   
+4                    0                    0                    Thread-4                                                                4452022                                                        65536                0                    81920                0                   
+
+3                    0                    0                    Thread-3                                                                4451947                                                        0                    65536                0                    81920               
+5                    0                    0                    Thread-5                                                                4451967                                                        0                    65536                0                    81920               
+1                    0                    0                    Thread-1                                                                34210373                                                       0                    180228               0                    212996              
+8                    0                    0                    Thread-8                                                                4452015                                                        0                    65548                0                    81932               
+4                    0                    0                    Thread-4                                                                4452022                                                        0                    65536                0                    81920               
+2                    0                    0                    Thread-2                                                                4452215                                                        0                    65536                0                    81920               
+7                    0                    0                    Thread-7                                                                4451961                                                        0                    65560                0                    81944               
+
+

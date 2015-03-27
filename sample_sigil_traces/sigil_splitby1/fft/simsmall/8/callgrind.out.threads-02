@@ -1,0 +1,21 @@
+version: 1
+creator: callgrind-3.9.0.SVN
+pid: 9700
+cmd:  /home/DREXEL/ks499/benchmarks/splash2_std_pthreadlib/codes/kernels/fft/FFT -m16 -p8 -l6 -t
+part: 1
+thread: 2
+
+
+desc: I1 cache: 32768 B, 64 B, 8-way associative
+desc: D1 cache: 32768 B, 64 B, 8-way associative
+desc: LL cache: 15728640 B, 64 B, 30-way associative
+
+desc: Timerange: Basic block 0 - 8517391
+desc: Trigger: Program termination
+
+positions: line
+events: Ir Dr Dw I1mr D1mr D1mw ILmr DLmr DLmw Bc Bcm Bi Bim flops iops
+summary: 0
+
+
+totals: 0
