@@ -1,61 +1,51 @@
-This is the gem5 simulator.
+SYNCHROTRACE:
 
-For detailed information about building the simulator and getting
-started please refer to:
-* The main website:     http://www.gem5.org
-* Documentation wiki:   http://www.gem5.org/Documentation 
-* Doxygen generated:    http://www.gem5.org/docs
-* Tutorials:            http://www.gem5.org/Tutorials
+There are two tools which together form the prototype SynchroTrace simulation flow built into Gem5.
+	1) Sigil - Multi-threaded Trace Capture Tool
+	2) Replay - Event-Trace Replay Framework
+	
+The logical steps to using this simulation environment for design space exploration or CMP simulation is as follows:
+	1) Generate Multi-threaded Event Traces for the program binary you are testing (See Sigil documentation for further information):
+		a) Use the Sigil wrapping script (runsigil_and_gz_newbranch.py) with necessary options on your binary
+	2) Compile SynchroTrace
+	3) Run SynchroTrace with necessary options on the generated traces
+	
+Simulating FFT with SynchroTrace (And generating traces):
 
+1) Generate Traces for 8-threaded FFT (Options: -m16 -p8 -l6 -t):
 
-Specific pages of interest are:
-http://www.gem5.org/Introduction
-http://www.gem5.org/Build_System
-http://www.gem5.org/Dependencies
-http://www.gem5.org/Running_gem5
+a) /archgroup/archtools/postprocess_scripts/accel_select/runsigil_and_gz_newbranch.py --fair-sched=yes --tool=callgrind --separate-callers=100 --toggle-collect=main --cache-sim=yes --dump-line=no --drw-func=no --drw-events=yes --drw-splitcomp=1 --drw-intercepts=yes --drw-syscall=no --branch-sim=yes --separate-threads=yes --callgrind-out-file=callgrind.out.threads ./FFT -m16 -p8 -l6 -t
 
-Short version:
-External tools and required versions
+b) Generate Pthread synchronization metadata file (sigil.pthread.out) using the following script on err.gz which was generated when the traces are generated:
 
-To build gem5, you will need the following software:
-g++ version 4.3 or newer.
-Python, version 2.4 - 2.7 (we don't support Python 3.X). gem5 links in the 
-    Python interpreter, so you need the Python header files and shared 
-    library (e.g., /usr/lib/libpython2.4.so) in addition to the interpreter
-    executable. These may or may not be installed by default. For example,
-    on Debian/Ubuntu, you need the "python-dev" package in addition to the
-    "python" package. If you need a newer or different Python installation
-     but can't or don't want to upgrade the default Python on your system,
-     see http://www.gem5.org/Using_a_non-default_Python_installation
-SCons, version 0.98.1 or newer. SCons is a powerful replacement for make. 
-    If you don't have administrator privileges on your machine, you can use the
-    "scons-local" package to install scons in your m5 directory, or install SCons
-    in your home directory using the '--prefix=' option.  
-SWIG, version 1.3.34 or newer
-zlib, any recent version. For Debian/Ubuntu, you will need the "zlib-dev" or
-    "zlib1g-dev" package to get the zlib.h header file as well as the library
-    itself.
-m4, the macro processor.
+/archgroup/archtools/postprocess_scripts/noc_evaluation/generate_pthread_file.py err.gz
+
+2) Compile SynchroTrace using SConscript:
+
+cd synchrotrace
+scons build/X86_MESI_CMP_directory/gem5.opt --jobs=6
+
+3) Run SynchroTrace on the 8-thread traces of FFT:
+
+./build/X86_MESI_CMP_directory/gem5.opt ./configs/synchrotrace/synchrotrace.py --garnet-network=fixed --topology=Mesh --mesh-rows=8 --eventDir=TRACEDIRECTORY --outputDir=OUTPUTDIRECTORY --num-cpus=8 --num_threads=8 --num-dirs=8 --num-l2caches=8 --l1d_size=8kB --l1d_assoc=16 --l1i_size=8kB --l1i_assoc=2 --l2_size=128kB --l2_assoc=4 --cpi_iops=1 --cpi_flops=2 --bandwidth_factor=4 --l1_latency=3 --masterFreq=1 2> fft.err
+
+where TRACEDIRECTORY is the path to the directory holding your generated traces and OUTPUTDIRECTORY is the path to your output directory.
 
 
-4. In this directory, type 'scons build/<ARCH>/gem5.opt' where ARCH is one
-of ALPHA, ARM, MIPS, POWER, SPARC, or X86. This will build an optimized version
-of the gem5 binary (gem5.opt) for the the specified architecture.
+Simulating FFT with SynchroTrace (Using Pre-generated Traces):
 
-If you have questions, please send mail to gem5-users@gem5.org
+1) Compile SynchroTrace using SConscript:
 
-WHAT'S INCLUDED (AND NOT)
--------------------------
+scons build/X86_MESI_CMP_directory/gem5.opt --jobs=6
 
-The basic source release includes these subdirectories:
- - gem5:
-   - configs: example simulation configuration scripts
-   - ext: less-common external packages needed to build gem5
-   - src: source code of the gem5 simulator
-   - system: source for some optional system software for simulated systems
-   - tests: regression tests
-   - util: useful utility programs and files
+2) Run SynchroTrace on the 8-thread traces of FFT:
 
-To run full-system simulations, you will need compiled system firmware
-(console and PALcode for Alpha), kernel binaries and one or more disk images. 
-Please see the gem5 download page for these items at http://www.gem5.org/Download 
+./build/X86_MESI_CMP_directory/gem5.opt ./configs/synchrotrace/synchrotrace.py --garnet-network=fixed --topology=Mesh --mesh-rows=8 --eventDir=TRACEDIRECTORY --outputDir=OUTPUTDIRECTORY --num-cpus=8 --num_threads=8 --num-dirs=8 --num-l2caches=8 --l1d_size=8kB --l1d_assoc=16 --l1i_size=8kB --l1i_assoc=2 --l2_size=128kB --l2_assoc=4 --cpi_iops=1 --cpi_flops=2 --bandwidth_factor=4 --l1_latency=3 --masterFreq=1 2> fft.err
+
+where TRACEDIRECTORY is the path to the directory holding your generated traces and OUTPUTDIRECTORY is the path to your output directory.
+
+Using Pre-generated traces:
+
+We have included traces for various Splash2 and Parsec benchmarks (Using statically linked m5threads library) for at least 2/4/8/16/32 threads in /scratchlair/ks499-scratch/sigil_traces/
+
+Sample 8-thread traces using the standard pthread library are located in /scratchlair/ks499-scratch/sigil_traces_std_pth_lib
