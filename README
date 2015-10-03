@@ -4,7 +4,8 @@ There are two tools which together form the prototype SynchroTrace simulation fl
 	1) Sigil - Multi-threaded Trace Capture Tool
 	2) Replay - Event-Trace Replay Framework
 
-This code base includes (2) Replay.
+This code base includes (2) Replay. 
+Currently, the Sigil version required to generate traces is provided separately from the same github user "dpac-vlsi".
 	
 The logical steps to using this simulation environment for design space exploration or CMP simulation is as follows:
 	1)
@@ -30,6 +31,41 @@ Simulating FFT with SynchroTrace (Using Pre-generated Traces):
   b) Run the following script:
 
   run_synchrotrace_fft.pl
+
+######## Steps to build and run FFT example
+
+```sh
+$ git clone https://github.com/dpac-vlsi/SynchroTrace
+$ cd SynchroTrace
+$ python -V
+$ scons --version
+```
+Python 2.7.6 or above and scons 2.3.0 or above is required to run build and run SynchroTrace.
+For more information on requirements, check 5) in the additional notes below.
+Currently we do not provide any means to automatically check dependencies and install the missing packages.
+
+```sh
+$ scons build/X86_MESI_CMP_directory/gem5.opt --jobs=6
+```
+At this point, the gem5 executable should be built with integrated Replay in the location specified in the command above.
+gem5 is usually run with a configuration script that hooks up the various architecture models packaged with the gem5 framework.
+We have written a SynchroTrace configuration script to which arguments can be passed to configure the desired system.
+This script can be found at <SYNCHROTRACE_FOLDER>/configs/synchrotrace/synchrotrace.py
+
+The run_synchrotrace_fft.pl run script can be used to run the FFT example simply as follows:
+
+```sh
+$ ./run_synchrotrace_fft.pl
+```
+
+This script can be modified and emulated to run your own configuration.
+A different trace location by changing the $eventDir variable.
+This design being simulated is set by changing the arguments provided in the $synchrotracecmd variable.
+For a list of valid arguments, run the following from the main SynchroTrace folder:
+
+```sh
+$ ./build/X86_MESI_CMP_directory/gem5.opt ./configs/synchrotrace/synchrotrace.py --help
+```
 
 ####################################################################################################################################
 Additional Notes:
