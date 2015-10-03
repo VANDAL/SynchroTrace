@@ -1,4 +1,4 @@
-SYNCHROTRACE:
+#SYNCHROTRACE
 
 There are two tools which together form the prototype SynchroTrace simulation flow built into Gem5.
 	1) Sigil - Multi-threaded Trace Capture Tool
@@ -32,7 +32,7 @@ Simulating FFT with SynchroTrace (Using Pre-generated Traces):
 
   run_synchrotrace_fft.pl
 
-######## Steps to build and run FFT example
+#####Steps to build and run FFT example
 
 ```sh
 $ git clone https://github.com/dpac-vlsi/SynchroTrace
@@ -68,7 +68,7 @@ $ ./build/X86_MESI_CMP_directory/gem5.opt ./configs/synchrotrace/synchrotrace.py
 ```
 
 ####################################################################################################################################
-Additional Notes:
+#####Additional Notes:
 
 1) Sample Sigil Traces are located in $BASESYNCHROTRACEDIR/sample_sigil_traces
 
