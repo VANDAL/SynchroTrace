@@ -35,11 +35,6 @@ Simulating FFT with SynchroTrace (Using Pre-generated Traces):
 ######## Steps to build and run FFT example
 
 ```sh
-$ cd setup
-$ ./setup_sigil.sh
-```
-
-```sh
 $ git clone https://github.com/dpac-vlsi/SynchroTrace
 $ cd SynchroTrace
 $ python -V
