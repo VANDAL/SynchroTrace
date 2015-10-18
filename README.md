@@ -31,18 +31,24 @@ The logical steps to using this simulation environment for design space explorat
 
    - Please note: 
 	a) Runtime problems have been encountered when using later versions of swig and gcc.
+
 	b) Please ensure /usr/bin/gcc-4.4 is symbolically linked to your defaultgcc (/usr/bin/gcc)
-	b) gmp, mpc, and mpfr are packaged with gcc when using package installer such as apt.
-	c) swig-2.0.1 can be found at http://sourceforge.net/projects/swig/files/swig/swig-2.0.1/
-	d) Currently we do not provide any means to automatically install the missing packages.
+
+	c) gmp, mpc, and mpfr are packaged with gcc when using package installer such as apt.
+
+	d) swig-2.0.1 can be found at http://sourceforge.net/projects/swig/files/swig/swig-2.0.1/
+
+	e) Currently we do not provide any means to automatically install the missing packages.
 
 2) Build SynchroTrace
+
   a) If not done so, clone the SynchroTrace repo from GitHub:
 
 ```sh
 $ git clone https://github.com/dpac-vlsi/SynchroTrace
 ```
   b) Go to the base SynchroTrace directory
+
   c) Run the following command (Note that the number of jobs refers to the number of cores available for compilation):
      
 ```sh
