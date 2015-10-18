@@ -87,18 +87,18 @@ $ ./build/X86_MESI_CMP_directory/gem5.opt ./configs/synchrotrace/synchrotrace.py
 
 3) The run_synchrotrace_fft.pl run script has a section for debug flags. The following is a list of the available debug flags used by SynchroTrace with brief descriptions.
 
-DebugFlag('mutexLogger') - Prints order of threads obtaining mutex lock
-DebugFlag('printEvent') - Prints EventID# for specific thread before/after event started/completed. This debug flag makes the simulation time very slow.
-DebugFlag('printEventFull') - Prints EventIDs for Threads, Threads on what Cores every 50k cycles
-DebugFlag('cacheMiss') - Prints out cache misses as they happen and address 
-DebugFlag('memoryInBarrier') - prints memory reads, writes, read bytes, write bytes every barrier
-DebugFlag('flitsInBarrier') - prints flits generated every barrier
-DebugFlag('l1MissesInBarrier') - prints l1 misses per thread every barrier
-DebugFlag('latencyInBarrier') - prints 3 lines. # packets in barrier, Accumulated queueing delay in barrier, Accumulated network latency in Barrier.
-DebugFlag('powerStatsInBarrier') - prints the total router power specifically for that barrier, i.e. not a rolling average.
-DebugFlag('roi') - Prints out the cycle when we reach the parallel region in Debate. Prints out when the threads all join up.
-DebugFlag('netMessages') - Prints the network packet messages out at 10k cycle buckets.
-DebugFlag('amTrace') - Original default debug flag.
+-DebugFlag('mutexLogger') - Prints order of threads obtaining mutex lock
+-DebugFlag('printEvent') - Prints EventID# for specific thread before/after event started/completed. This debug flag makes the simulation time very slow.
+-DebugFlag('printEventFull') - Prints EventIDs for Threads, Threads on what Cores every 50k cycles
+-DebugFlag('cacheMiss') - Prints out cache misses as they happen and address 
+-DebugFlag('memoryInBarrier') - prints memory reads, writes, read bytes, write bytes every barrier
+-DebugFlag('flitsInBarrier') - prints flits generated every barrier
+-DebugFlag('l1MissesInBarrier') - prints l1 misses per thread every barrier
+-DebugFlag('latencyInBarrier') - prints 3 lines. # packets in barrier, Accumulated queueing delay in barrier, Accumulated network latency in Barrier.
+-DebugFlag('powerStatsInBarrier') - prints the total router power specifically for that barrier, i.e. not a rolling average.
+-DebugFlag('roi') - Prints out the cycle when we reach the parallel region in Debate. Prints out when the threads all join up.
+-DebugFlag('netMessages') - Prints the network packet messages out at 10k cycle buckets.
+-DebugFlag('amTrace') - Original default debug flag.
 
 4) An example of this command with a debug flag is as follows:
 ./build/X86_MESI_CMP_directory/gem5.opt --debug-flags=printEventFull ./configs/synchrotrace/synchrotrace.py --garnet-network=fixed --topology=Mesh --mesh-rows=8 --eventDir=$eventDir --outputDir=$outputDir --num-cpus=8 --num_threads=8 --num-dirs=8 --num-l2caches=8 --l1d_size=8kB --l1d_assoc=16 --l1i_size=8kB --l1i_assoc=2 --l2_size=128kB --l2_assoc=4 --cpi_iops=1 --cpi_flops=2 --bandwidth_factor=4 --l1_latency=3 --masterFreq=1 2> fft.err";
