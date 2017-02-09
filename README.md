@@ -1,4 +1,4 @@
-#SYNCHROTRACE
+#SYNCHROTRACE (Now deprecated. Please use https://github.com/dpac-vlsi/SynchroTrace-gem5 )
 
 There are two tools which together form the prototype SynchroTrace simulation flow built into Gem5.
 	1) Sigil - Multi-threaded Trace Capture Tool
